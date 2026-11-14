@@ -51,3 +51,7 @@ Do **not** silently replace this proposal with a completely different media engi
 - Add large event mode only after the basic meeting path is reliable.
 
 See [Codex work orders](docs/CODEX_TASKS.md) for copyable scoped assignments.
+
+## Delivery work orders and model assignment
+
+The authoritative **178-task, 14-phase** task breakdown is [docs/TASK_BACKLOG.md](docs/TASK_BACKLOG.md); the master rollout/gates are in [docs/DELIVERY_MASTER_PLAN.md](docs/DELIVERY_MASTER_PLAN.md). Work on one narrow task ID at a time using [docs/CODEX_CREDIT_POLICY.md](docs/CODEX_CREDIT_POLICY.md). **Codex GPT-6.1 Sol is the default implementation lane**; **Astra is an exception/escalation lane**; **GPT-6 in Chat drafts specs and small patches but does not substitute for passing actual tests**. Maintainer approval is mandatory at legal, paid infrastructure, high-risk security and release gates. Do not assign a task to multiple agents concurrently editing the same files.

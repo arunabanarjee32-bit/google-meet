@@ -72,3 +72,7 @@ An empty checkbox is **planned work**, not a delivered feature. See the [roadmap
 - [Repository](https://github.com/arunabanarjee32-bit/google-meet) — canonical project home
 
 **Maintainer note:** The name MegaMeet is a working label, not a cleared trademark or registered brand. Product naming and licensing remain open decisions.
+
+## Task management linkage
+
+See the [master plan](docs/DELIVERY_MASTER_PLAN.md), [178-task backlog](docs/TASK_BACKLOG.md), and [credit policy](docs/CODEX_CREDIT_POLICY.md). Each PR should reference a task ID of the form `MM-04-02` and a milestone gate. One task should be one reviewable change where practical.
