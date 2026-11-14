@@ -85,7 +85,7 @@ This contains **178 discrete work orders across 14 phases**. It serves as the ex
 | MM-02-05 | S | S | Unit and integration test harness | Sample meaningful tests run in CI | MM-02-01 |
 | MM-02-06 | S | S | GitHub Actions build/test workflow | PR checks run with least-privilege permissions | MM-02-04 |
 | MM-02-07 | S | S | Docker development configuration | Minimum required services start with documented teardown | MM-02-03 |
-| MM-02-08 | S | S | Typed API contract package | Client/server contract compiles with schema validation | M01-06 |
+| MM-02-08 | S | S | Typed API contract package | Client/server contract compiles with schema validation | MM-01-06 |
 | MM-02-09 | S | S | Structured error and log helpers | Correlation IDs and sensitive fields redacted | MM-02-01 |
 | MM-02-10 | C | S | Write exact local setup and troubleshooting | New developer guide tested against fresh clone | MM-02-07 |
 | MM-02-11 | S | S | Dependabot/security scanning and lockfile audit | Version pinning and actionable dependency alerts | MM-02-06 |

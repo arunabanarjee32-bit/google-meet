@@ -28,7 +28,7 @@ id,phase,owner,effort,prerequisite,task,acceptance,status
 "MM-02-05","G02","Codex GPT-6.1 Sol","S","MM-02-01","Unit and integration test harness","Sample meaningful tests run in CI","Not started"
 "MM-02-06","G02","Codex GPT-6.1 Sol","S","MM-02-04","GitHub Actions build/test workflow","PR checks run with least-privilege permissions","Not started"
 "MM-02-07","G02","Codex GPT-6.1 Sol","S","MM-02-03","Docker development configuration","Minimum required services start with documented teardown","Not started"
-"MM-02-08","G02","Codex GPT-6.1 Sol","S","M01-06","Typed API contract package","Client/server contract compiles with schema validation","Not started"
+"MM-02-08","G02","Codex GPT-6.1 Sol","S","MM-01-06","Typed API contract package","Client/server contract compiles with schema validation","Not started"
 "MM-02-09","G02","Codex GPT-6.1 Sol","S","MM-02-01","Structured error and log helpers","Correlation IDs and sensitive fields redacted","Not started"
 "MM-02-10","G02","Chat GPT-6","S","MM-02-07","Write exact local setup and troubleshooting","New developer guide tested against fresh clone","Not started"
 "MM-02-11","G02","Codex GPT-6.1 Sol","S","MM-02-06","Dependabot/security scanning and lockfile audit","Version pinning and actionable dependency alerts","Not started"
