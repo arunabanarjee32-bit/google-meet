@@ -55,3 +55,7 @@
 | Escalation needed? | No / Astra on specific failure |
 
 If Chat/Work/Codex model access changes, use the nearest available equivalent with the same **role**, but never assume this project document grants account entitlements.
+
+## Using Chat for actual code generation
+
+Chat can produce complete **small, isolated files** such as TypeScript types, Zod schemas, pure validation helpers, mock fixtures, unit tests, UI components, starter templates, SQL migrations and sample SDK clients. Ask for specific inputs/outputs and tests, then have Sol integrate and **execute** those tests. This often reduces Sol's exploratory work. Chat should not assert that a generated module compiles, is secure, or integrates with the current repository unless it has actually inspected and validated it. If Chat has permission to commit a patch via the connected GitHub integration, still require normal review/CI before considering it done.
