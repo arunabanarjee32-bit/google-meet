@@ -6,5 +6,6 @@ ADRs capture choices rather than treating earlier chats or generated docs as bin
 | --- | --- | --- |
 | [0001](0001-modular-monorepo.md) | Modular monorepo + external engines | Proposed |
 | [0002](0002-interactive-and-broadcast.md) | Split interactive and massive-audience delivery | Proposed |
+| [0003](0003-livekit-foundations.md) | LiveKit Meet reference + LiveKit Server as the two primary foundations | Proposed |
 
 To add an ADR, explain **context, decision, alternatives, consequences, measurable validation, reversibility and approval status**. Mark superseded decisions and link successors, rather than silently editing history. Decisions that involve license choice, privacy or cost require project-owner approval.
