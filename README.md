@@ -23,7 +23,8 @@ A browser-first, mobile-ready, commercially viable meeting platform that combine
 | New to the project | [Project vision](docs/PROJECT_VISION.md) and [Product requirements](docs/PRODUCT_REQUIREMENTS.md) |
 | A developer choosing a task | [Roadmap](docs/ROADMAP.md), [Contribution guide](CONTRIBUTING.md), and [Definition of done](docs/DEFINITION_OF_DONE.md) |
 | A backend/media engineer | [System architecture](docs/ARCHITECTURE.md) and [100K scaling plan](docs/SCALABILITY_100K.md) |
-| Evaluating open source components | [Technology and reuse matrix](docs/TECH_STACK.md) and [Licensing notes](docs/LICENSING.md) |
+| Evaluating open source components | [Foundation audit](docs/FOUNDATION_AUDIT_2026-11-15.md), [Technology and reuse matrix](docs/TECH_STACK.md), and [Licensing notes](docs/LICENSING.md) |
+| Continuing the latest engineering investigation | [Continuation handoff](docs/CONTINUATION.md) and [ADR-0003](docs/DECISIONS/0003-livekit-foundations.md) |
 | Working with Codex or another AI coding agent | [AGENTS.md](AGENTS.md) and [Codex work orders](docs/CODEX_TASKS.md) |
 | Reviewing security or operations | [Security and privacy](docs/SECURITY_PRIVACY.md) and [Operational cost model](docs/COST_MODEL.md) |
 
