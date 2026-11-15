@@ -76,3 +76,7 @@ An empty checkbox is **planned work**, not a delivered feature. See the [roadmap
 ## Task management linkage
 
 See the [GitHub phase-issue index](docs/ISSUE_INDEX.md), [master plan](docs/DELIVERY_MASTER_PLAN.md), [178-task backlog](docs/TASK_BACKLOG.md), and [credit policy](docs/CODEX_CREDIT_POLICY.md). Each PR should reference a task ID of the form `MM-04-02` and a milestone gate. One task should be one reviewable change where practical.
+
+## Public repositories for study
+
+The consolidated [30-repository study catalog](PUBLIC_REPOSITORIES_TO_STUDY.txt) lists every previously discussed GitHub repository with its purpose, study priority, reported licensing and integration cautions. It also distinguishes cloud services such as AWS IVS and Cloudflare Stream from open-source source repositories.

@@ -1,0 +1,280 @@
+MEGAMEET - PUBLIC GITHUB REPOSITORIES TO STUDY
+==============================================
+Reference date: 2026-11-15
+Project: https://github.com/arunabanarjee32-bit/google-meet
+Document purpose: a complete consolidated inventory of the public GitHub projects
+previously discussed for planning the MegaMeet product.
+
+IMPORTANT BEFORE YOU USE ANY CODE
+---------------------------------
+* These repositories are candidates to STUDY, not code already imported into MegaMeet.
+* A public GitHub repository is not automatically free to reuse commercially.
+* "License" below is a snapshot of GitHub repository metadata checked on
+  2026-11-15, except Yjs (source LICENSE checked separately). A license that is
+  missing, complex, or not machine-recognized is listed as CHECK FIRST.
+* Read the LICENSE, NOTICE, COPYING, dependency/module licenses and relevant
+  edition terms for the EXACT version you deploy. Verify trademarks/assets too.
+* MegaMeet's own original-code/contribution license still needs an owner decision.
+* Avoid copying unrelated complete apps or combining incompatible conferencing
+  engines. Prefer SDKs and well-defined service APIs.
+* "100,000 participants" means one logical event with a bounded interactive
+  speaker stage plus 100,000+ concurrent VIEWERS through a separately scalable
+  broadcast path. This is a target, NOT a verified capacity.
+
+RECOMMENDATION KEY
+------------------
+PRIMARY       = strongest proposed part of initial software architecture.
+CONDITIONAL   = use when product requirements justify it; compare alternatives.
+REFERENCE     = study UX, architecture, APIs or tradeoffs; do not wholesale merge.
+LICENSE CHECK = don't import or commercially embed until licensing is cleared.
+
+SECTION A - LIVEKIT / REAL-TIME MEETING FOUNDATION
+--------------------------------------------------
+01. LiveKit Meet [PRIMARY]
+    URL: https://github.com/livekit-examples/meet
+    GitHub license: Apache-2.0
+    Study: Next.js video meeting frontend, browser join flow, gallery UI.
+    Plan: candidate starting app; customize under an approved license plan.
+
+02. LiveKit Livestream [REFERENCE / LICENSE CHECK]
+    URL: https://github.com/livekit-examples/livestream
+    GitHub license: NOT REPORTED; root LICENSE was not found in this check.
+    Study: audience viewing, host/stage concept, broadcasting UX.
+    Plan: study patterns; do not copy source before permission/license confirmation.
+
+03. LiveKit Server [PRIMARY]
+    URL: https://github.com/livekit/livekit
+    GitHub license: Apache-2.0
+    Study: SFU, rooms, real-time audio/video, transport and scaling limits.
+    Plan: integrate as a media service, not a new SFU authored by Codex.
+
+04. LiveKit Egress [PRIMARY]
+    URL: https://github.com/livekit/egress
+    GitHub license: Apache-2.0
+    Study: recording, compositing and video export.
+    Plan: recording and speaker-stage feed export; NOT a viewer CDN.
+
+05. LiveKit Ingress [CONDITIONAL]
+    URL: https://github.com/livekit/ingress
+    GitHub license: Apache-2.0
+    Study: RTMP/WHIP input and OBS/encoder workflows.
+    Plan: add only for external presenter/producer ingestion.
+
+06. LiveKit Components (React) [PRIMARY]
+    URL: https://github.com/livekit/components-js
+    GitHub license: Apache-2.0
+    Study: device selectors, audio/video controls, media UI components.
+    Plan: reuse instead of coding all meeting controls from scratch.
+
+07. LiveKit React Native SDK [CONDITIONAL]
+    URL: https://github.com/livekit/client-sdk-react-native
+    GitHub license: Apache-2.0
+    Study: Android/iOS real-time media, permissions and platform constraints.
+    Plan: mobile phase, not initial web MVP.
+
+08. LiveKit Agents [CONDITIONAL]
+    URL: https://github.com/livekit/agents
+    GitHub license: Apache-2.0
+    Study: real-time speech/AI agent pipelines.
+    Plan: add only with explicit AI privacy, consent and cost gates.
+
+SECTION B - COMPLETE MEETING AND LIVESTREAM APPS TO STUDY
+--------------------------------------------------------
+09. Jitsi Meet [REFERENCE]
+    URL: https://github.com/jitsi/jitsi-meet
+    GitHub license: Apache-2.0
+    Study: browser meeting UX, controls, conferencing features.
+    Plan: architecture and product benchmark; do not merge its meeting engine
+    alongside LiveKit without a separately approved redesign.
+
+10. BigBlueButton [REFERENCE / LICENSE CHECK]
+    URL: https://github.com/bigbluebutton/bigbluebutton
+    GitHub license: LGPL-3.0 (repo metadata; examine full distribution terms).
+    Study: classrooms, moderator workflows, presentation and collaboration.
+    Plan: alternative complete system; NOT a drop-in LiveKit plugin.
+
+11. Owncast [REFERENCE]
+    URL: https://github.com/owncast/owncast
+    GitHub license: MIT
+    Study: self-hosted livestream UX, chat and community tools.
+    Plan: learn event presentation and moderation tradeoffs.
+
+12. OvenSpace [REFERENCE]
+    URL: https://github.com/OvenMediaLabs/OvenSpace
+    GitHub license: MIT (app repo); linked server has different licensing.
+    Study: sub-second broadcasting demo and audience/presenter flow.
+    Plan: reference only until all bundled/external components are vetted.
+
+SECTION C - BROADCASTING / VIDEO DELIVERY OPTIONS
+-------------------------------------------------
+13. OvenMediaEngine [REFERENCE / LICENSE CHECK]
+    URL: https://github.com/OvenMediaLabs/OvenMediaEngine
+    GitHub license: AGPL-3.0
+    Study: WebRTC / LL-HLS broadcasting at scale.
+    Plan: evaluate architecture, obligations and operating costs. Do not
+    silently embed AGPL software in a proprietary distribution.
+
+14. SRS (Simple Realtime Server) [CONDITIONAL]
+    URL: https://github.com/ossrs/srs
+    GitHub license: MIT
+    Study: RTMP, WebRTC, HLS, media origin and streaming protocols.
+    Plan: possible self-hosted origin. An origin alone does NOT supply global
+    CDN capacity or prove 100,000 real concurrent viewers.
+
+SECTION D - COLLABORATION, IDENTITY, DATA AND SCHEDULING
+-------------------------------------------------------
+15. Excalidraw [CONDITIONAL]
+    URL: https://github.com/excalidraw/excalidraw
+    GitHub license: MIT
+    Study: embeddable whiteboard/drawing collaboration.
+    Plan: integrate vetted package(s), not rewrite a drawing engine.
+
+16. Yjs [CONDITIONAL]
+    URL: https://github.com/yjs/yjs
+    License: MIT in repository LICENSE; GitHub API metadata says NOASSERTION.
+    Study: CRDT collaborative notes, whiteboard/shared state syncing.
+    Plan: verify exact package/dependencies and fit to transport design.
+
+17. Keycloak [CONDITIONAL]
+    URL: https://github.com/keycloak/keycloak
+    GitHub license: Apache-2.0
+    Study: OIDC, enterprise SSO, identity/tenant administration.
+    Plan: candidate identity service; weigh setup/maintenance overhead.
+
+18. Centrifugo [CONDITIONAL]
+    URL: https://github.com/centrifugal/centrifugo
+    GitHub license: Apache-2.0
+    Study: real-time messaging, authorized channels and fanout.
+    Plan: transport for chat, Q&A, polls and presence. Persistent chat,
+    moderation and tenant policy still need application services.
+
+19. FullCalendar [CONDITIONAL]
+    URL: https://github.com/fullcalendar/fullcalendar
+    GitHub license: MIT (core repo; premium features separately licensed).
+    Study: calendar scheduling UI, date/timezone interactions.
+    Plan: build meeting scheduling UI on approved components.
+
+20. Valkey [CONDITIONAL]
+    URL: https://github.com/valkey-io/valkey
+    GitHub license: BSD-3-Clause
+    Study: cache, short-lived state and Redis-compatible data structures.
+    Plan: add when real-time/session needs justify a separate service.
+
+SECTION E - AI, NOTIFICATIONS, PRODUCT AND BILLING
+--------------------------------------------------
+21. Whisper [CONDITIONAL]
+    URL: https://github.com/openai/whisper
+    GitHub license: MIT
+    Study: speech recognition, transcript formats and model serving cost.
+    Plan: optional captions/transcription with opt-in and capacity planning.
+
+22. Novu [CONDITIONAL / LICENSE CHECK]
+    URL: https://github.com/novuhq/novu
+    GitHub license: NOASSERTION; edition/modules may have separate terms.
+    Study: notifications workflows, email/push and delivery monitoring.
+    Plan: evaluate before integrating; avoid carrying a heavy platform into MVP.
+
+23. Umami [CONDITIONAL]
+    URL: https://github.com/umami-software/umami
+    GitHub license: MIT
+    Study: privacy-aware product/web analytics.
+    Plan: later analytics under a documented data/consent policy.
+
+24. Kill Bill [CONDITIONAL]
+    URL: https://github.com/killbill/killbill
+    GitHub license: Apache-2.0
+    Study: subscriptions, billing ledger and lifecycle.
+    Plan: compare with managed billing; may be too complex for early launch.
+
+SECTION F - PERFORMANCE, NETWORKING AND LICENSE-CAUTION ALTERNATIVES
+-------------------------------------------------------------------
+25. Locust [CONDITIONAL]
+    URL: https://github.com/locustio/locust
+    GitHub license: MIT
+    Study: reproducible API/HTTP/WebSocket load testing.
+    Plan: good for control-plane stress; NOT evidence of 100K real video
+    playback without actual media client measurement.
+
+26. Coturn [CONDITIONAL / LICENSE CHECK]
+    URL: https://github.com/coturn/coturn
+    GitHub license: NOASSERTION (verify exact copyright/license files).
+    Study: STUN/TURN NAT traversal and relay performance.
+    Plan: evaluate if using a self-hosted WebRTC infrastructure.
+
+27. tldraw [REFERENCE / LICENSE CHECK]
+    URL: https://github.com/tldraw/tldraw
+    GitHub license: NOASSERTION; commercial SDK/production terms apply.
+    Study: infinite canvas UX and whiteboard SDK.
+    Plan: do not assume commercial embedding is covered by MIT.
+
+28. Cal.com (formerly referenced as calcom/cal.com) [REFERENCE]
+    Current URL: https://github.com/calcom/cal.diy
+    Historical URL: https://github.com/calcom/cal.com (moved)
+    GitHub license for current cal.diy repo: MIT; verify exact modules/versions.
+    Study: booking/calendar architecture, availability, scheduling and invites.
+    Plan: reference, not a requirement to merge a full scheduling app.
+
+29. ZITADEL [REFERENCE / LICENSE CHECK]
+    URL: https://github.com/zitadel/zitadel
+    GitHub license: AGPL-3.0
+    Study: cloud-native multi-tenant identity/authorization patterns.
+    Plan: compare with Keycloak; check AGPL/network terms before adoption.
+
+30. Grafana k6 [REFERENCE / LICENSE CHECK]
+    URL: https://github.com/grafana/k6
+    GitHub license: AGPL-3.0 (current repo metadata).
+    Study: performance-test scripts and load generator architecture.
+    Plan: tool evaluation; check licensing before redistribution.
+
+SECTION G - NON-GITHUB-SOURCE PRODUCTS / SERVICES WE ALSO DISCUSSED
+-------------------------------------------------------------------
+These are NOT additional repository entries; compare their terms, features,
+prices, quotas and regional availability before using them.
+
+* LiveKit Cloud: https://livekit.io/
+  Managed LiveKit infrastructure; differs from self-hosting limits and costs.
+* AWS IVS: https://aws.amazon.com/ivs/
+  Managed large-audience live video delivery option.
+* Cloudflare Stream: https://developers.cloudflare.com/stream/
+  Managed encoding/video delivery option; validate its current protocol,
+  latency and concurrency offerings for the chosen product tier.
+* PostgreSQL, Next.js, React/React Native, container orchestration, and
+  message brokers were discussed as technologies, not previously selected
+  public repositories to copy wholesale into MegaMeet.
+
+RECOMMENDED STUDY / IMPLEMENTATION ORDER
+----------------------------------------
+1. Read MegaMeet README, docs/PROJECT_VISION.md and docs/TASK_BACKLOG.md.
+2. Verify owner code license and review upstream third-party notices.
+3. Inspect LiveKit Meet + Components + Server (items 01, 03, 06).
+4. Inspect recording/export (item 04), and optional input (item 05).
+5. Compare managed broadcast providers versus SRS (item 14) for
+   100,000+ audience delivery and define real playback load tests.
+6. Add identity (item 17) only after deciding product/tenant needs.
+7. Add collaboration (items 15, 16, 18, 19) as complete user flows.
+8. Evaluate mobile (07), AI (08/21), analytics/billing (23/24) when needed.
+9. Study alternate entire apps (09-12) only for patterns/features;
+   do not merge whole stacks into the core system.
+10. Use performance tools (25/30) with clear claims and safe paid budgets.
+
+WHAT A CODEX / HUMAN CONTRIBUTOR SHOULD REPORT BEFORE ADOPTING ANY REPO
+-----------------------------------------------------------------------
+- Candidate URL and exactly pinned package/tag/commit
+- License text, NOTICE, trademark/assets and transitive licensing
+- Build-versus-reuse decision and why
+- Integration contract + expected failure modes
+- Security, privacy, data residency and operational costs
+- Versioned tests and rollback plan
+- Whether this is just reference study, a service integration, or code reuse
+
+Useful existing documentation:
+README.md
+docs/TECH_STACK.md
+docs/ARCHITECTURE.md
+docs/LICENSING.md
+docs/SCALABILITY_100K.md
+docs/TASK_BACKLOG.md
+docs/CODEX_CREDIT_POLICY.md
+AGENTS.md
+
+END OF CATALOG - 30 UNIQUE GITHUB REPOSITORIES LISTED
