@@ -1,0 +1,965 @@
+# MEGAMEET — 2-HOUR DEEP RESEARCH, REPOSITORY INTELLIGENCE, ARCHITECTURE DESIGN & AUTONOMOUS DEVELOPMENT
+
+## YOUR MISSION
+
+You are acting as an elite principal software engineer, chief software architect, advanced repository researcher, real-time communications specialist, and autonomous AI development agent.
+
+You are responsible for deeply understanding, architecting, and beginning the implementation of **MegaMeet**, a professional video conferencing and collaboration platform.
+
+**Our main GitHub repository:**
+
+https://github.com/arunabanarjee32-bit/google-meet
+
+Your task is NOT to give generic advice, create a superficial development plan, or simply recommend technologies.
+
+Your task is to:
+
+1. Deeply investigate our complete repository and its existing code structure.
+2. Understand our exact project vision, requirements, architecture, roadmap, and building strategy.
+3. Read and research every GitHub repository mentioned in our `.txt` reference file.
+4. Discover and critically compare the most valuable technical foundations.
+5. Select **EXACTLY TWO MAIN OPEN-SOURCE REPOSITORIES** that will provide maximum practical value to our project.
+6. Determine precisely which existing code, components, architectures, and engineering patterns should be reused, adapted, or independently implemented.
+7. Design the best realistic architecture for MegaMeet.
+8. Create a dependency-aware, detailed implementation plan aligned with our existing roadmap.
+9. Start actual development in our repository, respecting mandatory approval gates.
+10. Test and verify whatever you implement.
+
+This is a serious engineering assignment. Treat this project as a real software product intended for long-term development and eventual production use.
+
+---
+
+# CRITICAL INSTRUCTION: USE YOUR FULL 1–2 HOUR REASONING CAPABILITY
+
+**YOU HAVE PERMISSION AND ARE STRONGLY INSTRUCTED TO USE YOUR MAXIMUM AVAILABLE THINKING, ANALYSIS, RESEARCH, AND REASONING CAPABILITY.**
+
+I am specifically choosing a model capable of extended reasoning.
+
+You may spend **one to two hours thinking, researching, investigating repository source code, comparing alternatives, identifying mistakes, and developing a technically excellent solution.**
+
+DO NOT optimize for giving me a quick answer.
+
+DO NOT conclude after reading a few README files.
+
+DO NOT choose technologies based only on popularity.
+
+DO NOT simply repeat our existing roadmap without critically examining it.
+
+DO NOT begin coding before understanding the critical architectural decisions.
+
+DO NOT stop at the first seemingly reasonable solution.
+
+Instead, conduct deep, multi-pass research.
+
+Use as much of your available extended reasoning capacity as is useful to arrive at the strongest defensible engineering decisions.
+
+You should:
+
+- Investigate details rather than guess.
+- Revisit earlier assumptions after discovering new evidence.
+- Compare competing approaches.
+- Identify hidden architectural risks.
+- Inspect actual implementation code.
+- Evaluate scalability, maintainability, performance, security, and future extensibility.
+- Consider integration complexity and long-term operating costs.
+- Verify whether a chosen solution is suitable for real production use.
+- Distinguish between mature features, experimental functionality, and merely advertised capabilities.
+- Challenge your initial recommendations before finalizing them.
+
+You may use multiple research and reasoning passes.
+
+**Important:** If your execution environment supports two hours of reasoning, use that extended capability meaningfully. If it imposes a shorter limit, do the highest-value investigation possible. Never fabricate elapsed research time, code inspections, test results, or sources.
+
+Keep your detailed private reasoning internal. Present clear conclusions, technical evidence, decision criteria, and engineering tradeoffs.
+
+**The quality of your research and implementation matters more than response speed.**
+
+---
+
+# PHASE 1 — COMPLETE DEEP ANALYSIS OF OUR REPOSITORY
+
+Start by opening:
+
+https://github.com/arunabanarjee32-bit/google-meet
+
+If you have local workspace access, inspect the actual checked-out files and Git history. Fetch updates only when appropriate, without discarding local changes.
+
+Before recommending ANY architecture or technology, completely understand our existing project.
+
+## 1.1 — Read all project documentation
+
+Identify and read every relevant planning, technical, product, and engineering file.
+
+Pay particular attention to:
+
+- `README.md`
+- `AGENTS.md`
+- `PUBLIC_REPOSITORIES_TO_STUDY.txt`
+- `CONTRIBUTING.md`
+- `SECURITY.md`
+- `docs/PROJECT_VISION.md`
+- `docs/PRODUCT_REQUIREMENTS.md`
+- `docs/ARCHITECTURE.md`
+- `docs/ROADMAP.md`
+- `docs/TECH_STACK.md`
+- `docs/DELIVERY_MASTER_PLAN.md`
+- `docs/TASK_BACKLOG.md`
+- `docs/CODEX_TASKS.md`
+- `docs/LICENSING.md`
+- `docs/SCALABILITY_100K.md`
+
+These filenames reflect our intended planning structure. Verify which files actually exist rather than assuming.
+
+Also discover and examine any additional architecture specifications, implementation notes, deployment instructions, configuration files, or project decision records.
+
+Read documents fully when practical, not merely their titles.
+
+## 1.2 — Analyze our actual code structure
+
+Inspect the complete repository directory tree.
+
+Determine:
+
+- What code already exists.
+- What features are genuinely implemented.
+- What features are only described in documentation.
+- Which frameworks and languages are currently present.
+- Which dependencies are installed or declared.
+- Whether there is an existing frontend.
+- Whether there is an existing backend.
+- Whether authentication exists.
+- Whether WebRTC or video infrastructure exists.
+- Whether database models or migrations exist.
+- Whether Docker, CI/CD, tests, and deployment configuration exist.
+- Whether there are unfinished implementations.
+- Whether current files conflict with the proposed architecture.
+- Which code can be retained and improved.
+- Which proposed components are unnecessary for the initial MVP.
+
+Investigate existing files and their actual relationships.
+
+Do not invent features, directory structures, services, or tests that are not present.
+
+For each major area, classify it as:
+
+`IMPLEMENTED / PARTIALLY IMPLEMENTED / PLANNED / MISSING / BLOCKED`
+
+## 1.3 — Understand our actual development plan
+
+Analyze the relationship between:
+
+- Project vision.
+- Product requirements.
+- System architecture.
+- Technology choices.
+- Delivery master plan.
+- Roadmap.
+- Task backlog.
+- Development agent instructions.
+- Licensing requirements.
+- Large-scale broadcasting vision.
+
+Identify dependencies between tasks and phases.
+
+Determine whether the existing plans are:
+
+1. Technically achievable.
+2. Properly ordered.
+3. Realistic for incremental implementation.
+4. Compatible with the recommended repositories.
+5. Economically practical.
+6. Overengineered in any areas.
+7. Missing essential security, testing, or infrastructure work.
+
+Do not silently discard our original vision or roadmap.
+
+If you recommend changes, explain exactly why and show how they map to existing task IDs.
+
+---
+
+# PHASE 2 — EXTREMELY DEEP ANALYSIS OF THE REPOSITORY REFERENCE .TXT FILE
+
+**THIS IS ONE OF THE MOST IMPORTANT PARTS OF YOUR ENTIRE ASSIGNMENT.**
+
+Our repository contains:
+
+`PUBLIC_REPOSITORIES_TO_STUDY.txt`
+
+Locate this file and read it completely.
+
+If its location or exact filename differs, discover the actual reference catalog.
+
+This file contains a collection of open-source projects identified as potentially useful for MegaMeet.
+
+**YOU MUST STUDY EVERY REPOSITORY MENTIONED IN THIS FILE.**
+
+Do not select the first two repositories.
+
+Do not rely on superficial GitHub descriptions.
+
+Do not assume that a repository with more stars is automatically better.
+
+## 2.1 — Research each repository
+
+For every project mentioned in the `.txt` file, investigate:
+
+1. Repository name and GitHub URL.
+2. Its actual purpose.
+3. Primary programming language and framework.
+4. Architectural design.
+5. Actual source directory structure.
+6. Important modules and packages.
+7. WebRTC or real-time capabilities, where applicable.
+8. Frontend functionality.
+9. Backend functionality.
+10. Authentication and access-control model.
+11. Scalability and performance characteristics.
+12. Deployment requirements.
+13. Dependency and integration complexity.
+14. Maintenance activity and release status.
+15. Known technical limitations.
+16. License and attribution requirements.
+17. Commercial distribution compatibility.
+18. Security concerns.
+19. Production readiness.
+20. Exact usefulness to MegaMeet.
+
+Inspect meaningful source files, not only documentation.
+
+Where possible, identify specific modules, functions, components, and packages that could accelerate implementation.
+
+Verify claims using current source code, official documentation, release notes, and available issue/security information.
+
+Use specific commit hashes or release versions to make recommendations reproducible.
+
+## 2.2 — Evaluate real code reuse
+
+For every promising repository, answer:
+
+- Can we actually integrate it?
+- Is it a standalone application or a reusable library?
+- Can it run as an independent infrastructure service?
+- Does it use technologies compatible with our project?
+- Which specific modules could be reused?
+- Which parts should only be studied as architectural references?
+- How difficult would integration be?
+- Would integration create unnecessary complexity?
+- Would using it make our codebase harder to maintain?
+- Would updating it later become difficult?
+- Are we better off using its official SDK rather than copying its source?
+- Can it handle the functionality we need?
+- Is it legally and operationally safe for our intended product?
+
+Do not treat inspiration, source copying, dependency installation, and infrastructure deployment as equivalent approaches.
+
+## 2.3 — Build a technical comparison matrix
+
+Score meaningful candidates using consistent weighted criteria.
+
+Suggested evaluation criteria:
+
+| Criterion | Weight |
+|---|---:|
+| Compatibility with MegaMeet architecture | 20% |
+| Direct reusable functionality | 20% |
+| Maintainability and code quality | 15% |
+| Real-time performance and reliability | 15% |
+| Integration complexity | 10% |
+| Security and production readiness | 10% |
+| Licensing and long-term sustainability | 10% |
+
+You may refine the weights if justified.
+
+Do not make up numerical evidence.
+
+Explain subjective scores, and distinguish verified findings from estimates.
+
+Classify reference repositories as:
+
+- Main foundation candidate.
+- Supporting SDK or library.
+- Future-phase integration.
+- Learning/reference material only.
+- Unsuitable.
+
+Compare relevant alternatives even when they are technologically different.
+
+---
+
+# PHASE 3 — SELECT EXACTLY TWO MAIN REPOSITORIES
+
+**MY EXPLICIT REQUIREMENT: SELECT EXACTLY TWO MAIN REPOSITORIES. NOT ONE. NOT THREE. EXACTLY TWO.**
+
+These two repositories should form the strongest practical foundation for MegaMeet.
+
+They should complement each other rather than unnecessarily duplicate functionality.
+
+The selection must be based on your research, not a predetermined answer.
+
+## Initial candidates to investigate
+
+### Candidate A — LiveKit Meet
+
+https://github.com/livekit-examples/meet
+
+Investigate its real architecture, frontend, meeting components, room connection implementation, device handling, and integrations.
+
+Determine whether it is best treated as:
+
+- A starting application.
+- A source-code reference.
+- A source of reusable components.
+- An architecture example.
+
+### Candidate B — LiveKit Server
+
+https://github.com/livekit/livekit
+
+Investigate its SFU architecture, WebRTC capabilities, room management, participant behavior, media routing, scalability, deployment, and official integration APIs.
+
+Determine whether it should be used through:
+
+- A self-hosted server.
+- A managed LiveKit deployment.
+- Official SDKs and APIs.
+
+**These are strong preliminary candidates, but you must independently validate them against all relevant repositories in our `.txt` catalog.**
+
+If another pair is demonstrably better, select it and explain why.
+
+## Required evidence for EACH of the two finalists
+
+Provide:
+
+1. Exact repository URL.
+2. Relevant inspected commit hash or stable version.
+3. Technology stack.
+4. Architecture and important source directories.
+5. Core features.
+6. Why it fits MegaMeet.
+7. Specific reusable components.
+8. Specific files/modules/packages worth studying.
+9. Recommended integration method.
+10. Required customization.
+11. Compatibility problems.
+12. Licensing and attribution considerations.
+13. Security risks.
+14. Maintainability risks.
+15. Scalability constraints.
+16. Alternatives considered.
+17. Evidence supporting your selection.
+18. What must NOT be reused.
+19. Initial integration tasks.
+20. Long-term upgrade and maintenance strategy.
+
+For each finalist, clearly distinguish:
+
+**REUSE DIRECTLY / USE AS DEPENDENCY OR SERVICE / ADAPT WITH ATTRIBUTION / STUDY ONLY / BUILD OUR OWN**
+
+Most importantly, explain how these exact two repositories will work together in our application.
+
+Do not recommend writing an entirely new WebRTC SFU if a mature supported system meets our requirements.
+
+Do not combine incompatible competing real-time media backends without a strong technical justification.
+
+---
+
+# PHASE 4 — DESIGN THE BEST ARCHITECTURE FOR MEGAMEET
+
+After completing the repository investigation, design a coherent technical architecture.
+
+Our long-term product aims to become a sophisticated video conferencing and collaboration platform.
+
+Potential product capabilities include:
+
+- Secure meeting creation and joining.
+- Real-time audio and video.
+- Screen sharing.
+- Participant management.
+- Meeting host controls.
+- Waiting rooms and access restrictions.
+- Meeting scheduling.
+- Chat and collaboration.
+- Recording and playback.
+- Transcription and AI capabilities.
+- Administrative and enterprise features.
+- Scalable meeting infrastructure.
+- Large-event broadcasting.
+- Long-term multi-platform expansion.
+
+**Do not attempt to implement all features immediately.**
+
+Design an architecture that supports phased development without requiring unnecessary microservices from day one.
+
+## 4.1 — Technology selection
+
+Critically review our existing `docs/TECH_STACK.md`.
+
+Evaluate the appropriate choices for:
+
+- Frontend framework.
+- Backend architecture.
+- Authentication.
+- Authorization.
+- WebRTC infrastructure.
+- Real-time events and messaging.
+- Relational database.
+- Caching and distributed state.
+- Storage.
+- Background jobs.
+- Testing.
+- CI/CD.
+- Observability.
+- Deployment.
+- Infrastructure management.
+
+Prefer mature, actively maintained technologies that integrate cleanly with our chosen two main repositories.
+
+For the initial frontend, evaluate whether Next.js, React, and TypeScript remain the best fit.
+
+Avoid building multiple services just because the long-term architecture lists them.
+
+Explain build-versus-buy decisions.
+
+## 4.2 — System architecture
+
+Produce a concrete architecture showing:
+
+- Browser frontend.
+- Application backend/control plane.
+- Secure meeting admission.
+- Token issuance.
+- User and meeting identity.
+- Media infrastructure.
+- Persistence boundaries.
+- Future supporting services.
+- Production networking and deployment boundaries.
+
+Clearly distinguish **control-plane operations** from **media-plane communication**.
+
+For media interactions, explain how the selected real-time platform handles the flow.
+
+Do not put credentials or provider secrets in the browser.
+
+Avoid insecure sample token-generation patterns.
+
+Require backend authorization for room access and host privileges.
+
+## 4.3 — Performance and scalability
+
+Review the scalability targets described in our repository.
+
+Investigate:
+
+- Small interactive meetings.
+- Larger interactive meetings.
+- Media routing.
+- Bandwidth and network requirements.
+- Browser device limitations.
+- Connection recovery.
+- Geographic latency.
+- Deployment cost.
+- Infrastructure observability.
+- Horizontal scaling requirements.
+
+If our roadmap includes 100,000+ concurrent audience viewers, distinguish between interactive WebRTC participants and broadcast viewers.
+
+Design future large-event delivery separately where appropriate, potentially using egress/transcoding and CDN-backed distribution.
+
+Never claim that a normal interactive meeting supports 100,000 publishing participants.
+
+Never invent performance benchmarks.
+
+## 4.4 — Security
+
+Evaluate:
+
+- Authentication and session handling.
+- Authorization and participant roles.
+- Meeting invitation security.
+- Server-side token issuance.
+- Rate limiting and abuse prevention.
+- Secret management.
+- Safe room identifiers.
+- Privacy.
+- Consent for recording and AI.
+- Data retention.
+- Dependency security.
+- Infrastructure security.
+
+Explain which safeguards must exist in the MVP and which can be introduced later.
+
+---
+
+# PHASE 5 — ANALYZE AND IMPROVE OUR BUILDING PLAN
+
+Now that you understand the current repository and the two selected foundations, inspect our existing development plan again.
+
+Challenge it using the evidence you discovered.
+
+Answer these questions:
+
+1. Is the planned implementation order correct?
+2. Are there missing dependencies?
+3. Are there unnecessary technologies?
+4. Are there features that should be delayed?
+5. Is the proposed repository structure appropriate?
+6. Would a smaller initial architecture be better?
+7. Are we trying to build something already solved by our selected repositories?
+8. Can we reduce implementation effort without sacrificing core quality?
+9. Are security and verification steps integrated early enough?
+10. Can the architecture evolve without a major future rewrite?
+
+Do not replace our complete plan with an unrelated new roadmap.
+
+Keep our original milestones, task identifiers, and project objectives wherever possible.
+
+If changes are justified, recommend targeted revisions.
+
+## Required implementation roadmap
+
+Create a dependency-aware plan with the following progression:
+
+**Stage 0 — Repository and licensing validation**
+
+Confirm existing structure, source-reuse legality, unresolved approvals, and architectural assumptions.
+
+**Stage 1 — Working project foundation**
+
+Create the minimal application, development environment, configuration, automated quality checks, and CI.
+
+**Stage 2 — Secure real-time meeting MVP**
+
+Implement real joining, token issuance, device controls, and working two-person video conferencing.
+
+**Stage 3 — Usable meeting experience**
+
+Improve participant controls, host permissions, layouts, accessibility, reconnection, and error handling.
+
+**Stage 4 — Collaboration and persistence**
+
+Add necessary product storage, scheduling, messaging, and related features in dependency order.
+
+**Stage 5 — Advanced features**
+
+Introduce recording, transcripts, AI, administration, and more complex integrations only when prerequisites exist.
+
+**Stage 6 — Production readiness and scale**
+
+Improve operational controls, performance, monitoring, reliability, and security.
+
+**Stage 7 — Large-event architecture**
+
+Build and validate dedicated broadcast capabilities when supported by measurable requirements.
+
+Match these stages to the real roadmap and backlog in our repository.
+
+For every near-term task specify:
+
+- Exact backlog task ID, if available.
+- Description.
+- Dependencies.
+- Files likely to change.
+- Main implementation approach.
+- Acceptance criteria.
+- Required tests.
+- Verification commands.
+- Major risks.
+
+---
+
+# PHASE 6 — DESIGN OUR CODE STRUCTURE
+
+Produce an implementation-ready repository architecture based on our actual existing source tree.
+
+If we have a documentation-only repository, do not pretend it already contains applications and services.
+
+If code exists, preserve working functionality and improve incrementally.
+
+Consider a minimal monorepo structure such as:
+
+```text
+google-meet/
+├── apps/
+│   └── web/
+│       ├── app/
+│       ├── components/
+│       │   ├── meeting/
+│       │   ├── layout/
+│       │   └── ui/
+│       ├── lib/
+│       ├── hooks/
+│       ├── tests/
+│       └── package.json
+├── packages/
+│   └── [only genuinely shared packages]
+├── docs/
+├── .github/
+│   └── workflows/
+├── package.json
+├── pnpm-workspace.yaml
+├── pnpm-lock.yaml
+└── README.md
+```
+
+**This tree is only an architectural suggestion. Do not blindly reproduce it.**
+
+Determine the best structure from our source code and selected upstream technologies.
+
+Explain:
+
+- Where the frontend belongs.
+- Where server-side authorization lives.
+- Where the LiveKit integration belongs.
+- Where application configuration belongs.
+- Where shared types belong.
+- Where persistence will belong later.
+- Where tests belong.
+- Which folders are unnecessary today.
+- How future components can be added.
+
+Do not create empty microservices or placeholder packages solely for architectural appearance.
+
+Ensure the project is understandable, maintainable, and friendly to future AI coding agents.
+
+---
+
+# PHASE 7 — START BUILDING THE REAL PROJECT
+
+**THIS IS IMPORTANT: I DO NOT WANT RESEARCH ONLY.**
+
+After research, architecture selection, and all mandatory project approvals, begin implementing the first valid development milestone.
+
+Do not spend the entire assignment writing documents without attempting real development.
+
+However, respect repository-specific instructions, including `AGENTS.md` and licensing approval requirements.
+
+If a mandatory owner decision is unresolved, clearly identify the blocking decision. Complete all useful non-blocked research and preparatory work without violating the project rules.
+
+Do not silently assume approval.
+
+## 7.1 — Initial implementation objective
+
+Begin with the smallest useful, working foundation that moves MegaMeet toward a genuine video conferencing application.
+
+Prioritize:
+
+- Correct project bootstrapping.
+- A working local development environment.
+- TypeScript configuration.
+- A clean web application.
+- Suitable application structure.
+- Environment validation.
+- Basic MegaMeet branding.
+- Relevant tests and quality checks.
+- A documented path to the first real meeting.
+
+Then, in subsequent approved tasks, progress toward:
+
+- Create a meeting.
+- Join a meeting.
+- Use real camera and microphone devices.
+- Connect two browsers.
+- Exchange real audio and video.
+- Mute/unmute.
+- Enable/disable camera.
+- Share a screen.
+- Display participants.
+- Leave the meeting.
+- Handle disconnects.
+
+Every implemented feature must be genuine.
+
+**Never claim a video meeting works merely because the UI displays participant cards or simulated camera previews.**
+
+## 7.2 — Reuse the selected repositories intelligently
+
+Before writing a major feature, check whether one of the selected repositories already provides a reliable solution.
+
+If it does:
+
+1. Inspect the upstream implementation.
+2. Verify compatibility.
+3. Check licensing.
+4. Identify the appropriate public API or supported integration.
+5. Prefer maintained packages and stable integration points.
+6. Adapt the implementation for MegaMeet's architecture.
+7. Preserve attribution where required.
+8. Test the integrated functionality.
+
+Avoid blindly copying entire repositories.
+
+Avoid unnecessary forks.
+
+Avoid recreating existing mature media infrastructure.
+
+Keep our identity, product code, security rules, and branding independently maintained.
+
+## 7.3 — Code quality standards
+
+All code must prioritize:
+
+- Maintainability.
+- Type safety.
+- Readability.
+- Modularity.
+- Secure defaults.
+- Accessibility.
+- Responsive UI.
+- Reliable error handling.
+- Predictable state management.
+- Testing.
+- Clear configuration.
+- Compatibility with selected dependencies.
+
+Do not introduce unnecessary abstraction.
+
+Do not add dependencies without justification.
+
+Do not hardcode secrets.
+
+Do not use fake implementations to satisfy acceptance tests.
+
+Do not modify unrelated areas of the repository.
+
+Do not falsely claim a build or test succeeded.
+
+---
+
+# PHASE 8 — REAL VERIFICATION
+
+After completing any implementation task, run the relevant checks.
+
+Where available, verify:
+
+1. Dependency installation.
+2. TypeScript compilation.
+3. Linting.
+4. Production build.
+5. Unit tests.
+6. Integration tests.
+7. Environment validation.
+8. Dependency and secret checks.
+9. Development server startup.
+10. Real functional behavior.
+
+For video-related functionality, validate actual media connectivity using real browser sessions whenever the environment permits.
+
+Report exactly what ran and what passed.
+
+Distinguish:
+
+`VERIFIED / FAILED / NOT EXECUTED / BLOCKED`
+
+If you cannot run a test, explain the actual limitation.
+
+Do not present untested assumptions as completed functionality.
+
+---
+
+# PHASE 9 — REQUIRED FINAL DELIVERABLES
+
+After completing your deep research and initial implementation, provide these deliverables.
+
+## DELIVERABLE 1 — MegaMeet Repository Intelligence Report
+
+Include:
+
+- Actual current source tree.
+- Existing application/code inventory.
+- Documentation and roadmap analysis.
+- Implemented versus planned features.
+- Technical inconsistencies.
+- Critical missing pieces.
+- Risks and blockers.
+
+## DELIVERABLE 2 — Complete Reference Repository Research
+
+Summarize every repository listed in `PUBLIC_REPOSITORIES_TO_STUDY.txt`.
+
+For each, explain:
+
+- Primary purpose.
+- Relevant technology.
+- Integration suitability.
+- Maintainability.
+- Licensing considerations.
+- Reusable features.
+- Recommendation classification.
+
+Include source links and meaningful evidence.
+
+## DELIVERABLE 3 — EXACTLY TWO Best Main Repositories
+
+Present a detailed final selection.
+
+For each:
+
+- Exact GitHub URL.
+- Inspected version/commit.
+- Why it was selected.
+- Its architectural responsibilities.
+- Specific reusable modules.
+- How we will integrate it.
+- What we should customize.
+- Technical and legal risks.
+- Why competing alternatives lost.
+
+Explain how the two repositories complement each other.
+
+## DELIVERABLE 4 — Final System Architecture
+
+Include:
+
+- Architecture diagram.
+- Frontend/backend design.
+- Media/control-plane interaction.
+- Security boundaries.
+- Proposed minimal code organization.
+- Technology stack decisions.
+- Deployment approach.
+- Future scalability strategy.
+
+## DELIVERABLE 5 — Improved Development Plan
+
+Include:
+
+- What to implement first.
+- Task-by-task dependency order.
+- Exact existing backlog identifiers.
+- Acceptance criteria.
+- Recommended implementation sequence.
+- Expected integration points.
+- Features to defer.
+- Risks that need early validation.
+
+## DELIVERABLE 6 — Actual Implementation
+
+If approvals and tools permit:
+
+- Modify the actual repository.
+- Build the first approved implementation task.
+- Provide changed-file details.
+- Explain meaningful implementation decisions.
+- Run available verification.
+- Report working functionality.
+- List remaining blockers.
+
+Do not confuse a proposed file tree with actual generated files.
+
+## DELIVERABLE 7 — Next Engineering Action
+
+End with the **single highest-priority next engineering task**.
+
+State precisely:
+
+- Task ID.
+- Objective.
+- Prerequisites.
+- Files involved.
+- Implementation steps.
+- Acceptance tests.
+- Definition of done.
+
+---
+
+# PHASE 10 — FINAL SELF-REVIEW AND CRITICAL CHALLENGE
+
+Before finalizing your research or implementation, critically review your work.
+
+Ask yourself:
+
+1. Did I genuinely inspect the user's existing source code?
+2. Did I read the complete repository reference `.txt` file?
+3. Did I evaluate every listed project, at least at an architectural level?
+4. Did I inspect source code for the important finalists?
+5. Did I verify the selected repository versions and licenses?
+6. Did I select exactly two main repositories?
+7. Are those two repositories complementary?
+8. Could a better combination be selected?
+9. Is the proposed architecture simpler than necessary, or more complex than necessary?
+10. Am I recommending features that mature libraries already provide?
+11. Does the roadmap match the actual project state?
+12. Have I protected the future commercial maintainability of MegaMeet?
+13. Have I included secure meeting authorization?
+14. Have I avoided unrealistic scalability promises?
+15. Did I respect `AGENTS.md` and the project's approval requirements?
+16. Did I actually implement something when it was permitted?
+17. Have I verified my implementation rather than merely describing it?
+18. Are my conclusions supported by evidence?
+19. Have I distinguished facts from assumptions?
+20. Would an experienced principal engineer consider this a credible starting foundation for a real product?
+
+If significant weaknesses remain, improve the solution before finalizing.
+
+---
+
+# IMPORTANT EXECUTION RULES
+
+**RULE 1:** Research deeply before making major architectural decisions.
+
+**RULE 2:** Use your available 1–2 hour extended-reasoning capability meaningfully. Do not rush.
+
+**RULE 3:** The existing MegaMeet repository is the source of truth for project goals, requirements, approval rules, and task history.
+
+**RULE 4:** The real upstream source code is the source of truth for third-party implementation capabilities.
+
+**RULE 5:** Research every repository listed in our `.txt` file.
+
+**RULE 6:** Choose exactly two main repositories, supported by evidence.
+
+**RULE 7:** Do not confuse reusable libraries, example applications, and deployable infrastructure.
+
+**RULE 8:** Preserve existing working code and established project conventions.
+
+**RULE 9:** Do not unnecessarily rebuild capabilities already solved by mature open-source infrastructure.
+
+**RULE 10:** Respect licenses, security requirements, and mandatory owner approvals.
+
+**RULE 11:** Focus implementation on a small real working milestone rather than attempting the complete product simultaneously.
+
+**RULE 12:** Never fabricate research findings, performance results, code changes, or test results.
+
+**RULE 13:** If any detail is missing, investigate the repository and available documentation before asking me questions.
+
+**RULE 14:** Make justified engineering decisions independently when safe and reversible; ask only when an essential owner decision is required.
+
+**RULE 15:** Do not stop after writing a high-level plan. Proceed to actual implementation when permitted.
+
+**RULE 16:** Use current official sources and verify details that might have changed.
+
+**RULE 17:** Save useful research, architecture decisions, and implementation notes in appropriate project documentation when permitted, without unnecessarily duplicating our existing docs.
+
+**RULE 18:** Prioritize production-quality engineering and sustainable progress, not the appearance of completeness.
+
+---
+
+# START IMMEDIATELY
+
+Begin by examining:
+
+https://github.com/arunabanarjee32-bit/google-meet
+
+First, establish the real current repository state.
+
+Then read `AGENTS.md`, the project planning documents, and the complete `PUBLIC_REPOSITORIES_TO_STUDY.txt` catalog.
+
+Perform your deep repository research.
+
+Evaluate the strongest technical alternatives.
+
+Select **EXACTLY TWO MAIN REPOSITORIES**.
+
+Design the best architecture for MegaMeet.
+
+Produce a development plan aligned with the actual codebase.
+
+Then **start building the first approved working milestone** and verify the result.
+
+Use the maximum useful reasoning depth available to you, even if it requires one to two hours.
+
+**I value a deeply researched, technically accurate, implemented and verified foundation far more than a fast or superficial answer.**
+
+Your ultimate objective is not just to plan MegaMeet.
+
+**Your ultimate objective is to use the best existing open-source foundations, understand our codebase completely, and turn MegaMeet into a real, maintainable, working video conferencing product—one verified milestone at a time.**
