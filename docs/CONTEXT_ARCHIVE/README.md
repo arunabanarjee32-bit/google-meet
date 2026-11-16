@@ -5,13 +5,14 @@
 ## Recommended reading order
 
 1. **[Complete project context, research, links, diagrams and next work order](../MEGAMEET_COMPLETE_PROJECT_CONTEXT.md)** — master handoff (GitHub-rendered Markdown).
-2. **[Original uploaded 965-line engineering prompt](ORIGINAL_MASTER_ENGINEERING_PROMPT_2026-11-16.txt)** — exact, unchanged source. Useful for full requirements.
-3. **[Known previous conversation excerpts](KNOWN_CHAT_HISTORY_EXCERPTS_2026-11-16.md)** — earlier visible user requests, with missing-chat limitations explicitly noted.
-4. **[Full source snapshot, Part 1](GITHUB_SOURCE_SNAPSHOT_PART_01.md)** — root README, AGENTS, contribution/security, vision and requirements.
-5. **[Part 2](GITHUB_SOURCE_SNAPSHOT_PART_02.md)** — architecture, roadmap, tech stack, license, privacy/security and 100K scale.
-6. **[Part 3](GITHUB_SOURCE_SNAPSHOT_PART_03.md)** — delivery master plan, all 178 backlog tasks, Codex usage/credit policy, first sprint and GitHub issue index.
-7. **[Part 4](GITHUB_SOURCE_SNAPSHOT_PART_04.md)** — costs, developer instructions, definition of done and ADR-0001/0002.
-8. **[Part 5](GITHUB_SOURCE_SNAPSHOT_PART_05.md)** — original 30-repository catalog, CSV task backlog, and unmerged PR #21 audit/ADR/handoff plus PR #22 license decision worksheet.
+2. **[Word-compatible RTF handoff](../MEGAMEET_COMPLETE_PROJECT_CONTEXT_WORD.rtf)** — the master handoff in a portable document format that Microsoft Word can open; the Markdown is preferable for rendered Mermaid diagrams on GitHub.
+3. **[Original uploaded 965-line engineering prompt](ORIGINAL_MASTER_ENGINEERING_PROMPT_2026-11-16.txt)** — exact, unchanged source. Useful for full requirements.
+4. **[Known previous conversation excerpts](KNOWN_CHAT_HISTORY_EXCERPTS_2026-11-16.md)** — earlier visible user requests, with missing-chat limitations explicitly noted.
+5. **[Full source snapshot, Part 1](GITHUB_SOURCE_SNAPSHOT_PART_01.md)** — root README, AGENTS, contribution/security, vision and requirements.
+6. **[Part 2](GITHUB_SOURCE_SNAPSHOT_PART_02.md)** — architecture, roadmap, tech stack, license, privacy/security and 100K scale.
+7. **[Part 3](GITHUB_SOURCE_SNAPSHOT_PART_03.md)** — delivery master plan, all 178 backlog tasks, Codex usage/credit policy, first sprint and GitHub issue index.
+8. **[Part 4](GITHUB_SOURCE_SNAPSHOT_PART_04.md)** — costs, developer instructions, definition of done and ADR-0001/0002.
+9. **[Part 5](GITHUB_SOURCE_SNAPSHOT_PART_05.md)** — original 30-repository catalog, CSV task backlog, and unmerged PR #21 audit/ADR/handoff plus PR #22 license decision worksheet.
 
 ## Source and review status
 
