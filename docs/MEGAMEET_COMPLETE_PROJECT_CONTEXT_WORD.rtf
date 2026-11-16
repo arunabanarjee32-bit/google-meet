@@ -1,0 +1,400 @@
+{\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fswiss Calibri;}{\f1\fmodern Consolas;}}\paperw11906\paperh16838\margl1250\margr1250\margt1000\margb1000\widowctrl
+\pard\sb200\sa110\keepn\b\fs32\f0 MEGAMEET \u8212? Complete project context and AI/developer handoff\b0\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 > **Snapshot:** 2026-11-16 | **Status:** documentation and architecture planning; no runnable MegaMeet app on the inspected main branch | **Read first after an interrupted ChatGPT/Codex session.**\par
+\pard\sa60\par
+\pard\sb200\sa110\keepn\b\fs27\f0 0. How to use this file\b0\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 This is a **durable, GitHub-readable continuation document**. It consolidates the project objective, current repository evidence, research findings, selected two main foundations, 30 reference links, system diagrams, engineering priorities, approvals, and an exact first work order. It links to an **original 965-line uploaded prompt**, **five full-text snapshots containing 30 existing source files**, and the **recoverable chat excerpts**. The living original files remain authoritative.\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 **For a new developer or AI session:**\par
+\pard\ql\sa85\fs19\f0 1. Read [AGENTS.md](../AGENTS.md) and [CONTRIBUTING.md](../CONTRIBUTING.md); obey their approval gates.\par
+\pard\ql\sa85\fs19\f0 2. Read this file, then [docs/TASK_BACKLOG.md](TASK_BACKLOG.md), [docs/PROJECT_VISION.md](PROJECT_VISION.md), and [docs/LICENSING.md](LICENSING.md).\par
+\pard\ql\sa85\fs19\f0 3. Read [the 30-repository reference catalog](../PUBLIC_REPOSITORIES_TO_STUDY.txt), [the research evidence pack in draft PR #21](https://github.com/arunabanarjee32-bit/google-meet/pull/21), and [the licensing worksheet in draft PR #22](https://github.com/arunabanarjee32-bit/google-meet/pull/22).\par
+\pard\ql\sa85\fs19\f0 4. Inspect the actual CURRENT main branch, open PRs/issues, dependency versions and tests before coding. This is a **dated snapshot**, never proof that later changes do not exist.\par
+\pard\ql\sa85\fs19\f0 5. Work on **one exact backlog task and one reviewable branch/PR at a time**. Never change architecture, choose a license, spend money or merge security-sensitive code by assumption.\par
+\pard\sa60\par
+\pard\sb200\sa110\keepn\b\fs23\f0 What is archived, and what cannot be reconstructed\b0\par
+\pard\sa60\par
+\pard\sa40\f1\fs15 | Material | Where saved | Completeness |\par
+\pard\sa40\f1\fs15 |---|---|---|\par
+\pard\sa40\f1\fs15 | Owner-uploaded master engineering brief | [Verbatim 965-line original prompt](CONTEXT_ARCHIVE/ORIGINAL_MASTER_ENGINEERING_PROMPT_2026-11-16.txt) | Exact text checked by read-back |\par
+\pard\sa40\f1\fs15 | GitHub default-branch project documentation | [Snapshots 1](CONTEXT_ARCHIVE/GITHUB_SOURCE_SNAPSHOT_PART_01.md), [2](CONTEXT_ARCHIVE/GITHUB_SOURCE_SNAPSHOT_PART_02.md), [3](CONTEXT_ARCHIVE/GITHUB_SOURCE_SNAPSHOT_PART_03.md), [4](CONTEXT_ARCHIVE/GITHUB_SOURCE_SNAPSHOT_PART_04.md) | Full text of 24 original files; see the copies for source paths |\par
+\pard\sa40\f1\fs15 | Catalog, CSV backlog, PR #21 research/ADR/handoff and PR #22 license worksheet | [Snapshot 5](CONTEXT_ARCHIVE/GITHUB_SOURCE_SNAPSHOT_PART_05.md) | Full text of 6 files, with unmerged-PR flags |\par
+\pard\sa40\f1\fs15 | Older ChatGPT conversation messages that are actually visible | [Known chat history excerpts](CONTEXT_ARCHIVE/KNOWN_CHAT_HISTORY_EXCERPTS_2026-11-16.md) | **Partial only**; inaccessible past messages and assistant replies were not fabricated |\par
+\pard\sa40\f1\fs15 | Current engineering conclusions, links and Mermaid charts | This master handoff | Consolidated synthesis, not verbatim transcript |\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 **Access limitation:** This AI session does **not** have all complete previous ChatGPT conversations, so no one can truthfully claim this is a byte-for-byte export of every historical message. The user can later export/upload missing old chats, and they can be appended to the archive. The GitHub repo and uploaded engineering prompt are recoverable sources, unlike absent chat turns.\par
+\pard\sa60\par
+\pard\sb200\sa110\keepn\b\fs27\f0 1. Product identity and mission\b0\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 **Product:** MegaMeet (working name, not trademark-cleared). **GitHub repository:** https://github.com/arunabanarjee32-bit/google-meet. The historical repository name does **not** imply affiliation with Google.\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 **Goal:** Build an independently designed, commercially viable, reliable and secure video meeting/collaboration platform that can grow into a credible competitor to Google Meet, Zoom and Microsoft Teams. Own the **original MegaMeet application, design, business logic, authorization, product workflows, branding and architecture**; third-party open-source projects keep their own copyright and license obligations.\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 **Long-term capabilities:** secure rooms and meeting links; browser camera/microphone, screen share and device selection; host/co-host moderation; chat, Q&A, polls and reactions; scheduling, notifications, whiteboard, shared notes and recordings; accessibility; optional transcription/translation/AI with visible consent; organizations, SSO and administrative policies; later mobile; APIs/integrations; and large events.\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 **Differentiation to validate:** seamless transition from small interactive meetings to moderated large events; operational/cost transparency; accessibility and multilingual participation; developer-friendly APIs; trust and security by default. These are hypotheses, NOT achieved competitive features.\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 **Non-goals for first milestone:** a custom WebRTC SFU, mixing multiple conferencing engines, implementing all enterprise/AI/mobile/billing features, or promising 100,000 people simultaneously publishing cameras.\par
+\pard\sa60\par
+\pard\sb200\sa110\keepn\b\fs27\f0 2. Repository facts verified on 2026-11-16\b0\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 - Default branch: **main**. Inspected tree SHA: **dd2284f26f7822c086bef5070839364e42c01d8f**.\par
+\pard\ql\sa85\fs19\f0 - That tree includes governance/docs, the 30-project catalog, issue/PR templates, 178-task Markdown/CSV backlog, architecture/roadmap/license/privacy/planning documents, and ADR-0001/0002.\par
+\pard\ql\sa85\fs19\f0 - **No app source, package.json, lockfile, Next.js application, running backend, auth, WebRTC meeting, database migration, Docker configuration, GitHub Actions build/test workflow or production deploy exists on main at this snapshot.**\par
+\pard\ql\sa85\fs19\f0 - Therefore video calls, recording, chat, 100K events, latency/scale results and build/tests are **NOT IMPLEMENTED/NOT EXECUTED**, regardless of what planning diagrams describe.\par
+\pard\ql\sa85\fs19\f0 - Owner has linked GitHub access with admin/push permissions, but repo rules still require review and human decisions.\par
+\pard\ql\sa85\fs19\f0 - **Draft PR #21:** [docs: audit repository and propose LiveKit foundations](https://github.com/arunabanarjee32-bit/google-meet/pull/21). Branch: audit/livekit-foundations-2026-11-15. Includes research, ADR-0003, continuation. Unmerged at capture.\par
+\pard\ql\sa85\fs19\f0 - **Draft PR #22:** [MM-00-07 original-code license worksheet](https://github.com/arunabanarjee32-bit/google-meet/pull/22). Branch: docs/mm-00-07-license-decision-worksheet-2026-11-16. Unmerged at capture. Commit: fc860da4a32a3e72f6e4513d9e15580ccb7adfba.\par
+\pard\ql\sa85\fs19\f0 - **Issue #1:** [Choose original-code license and contributor terms](https://github.com/arunabanarjee32-bit/google-meet/issues/1). Open/unresolved at capture.\par
+\pard\ql\sa85\fs19\f0 - This context-archive branch is a **documentation contribution**, NOT evidence that G00/G01 were approved or that coding began.\par
+\pard\sa60\par
+\pard\sb200\sa110\keepn\b\fs23\f0 Status matrix\b0\par
+\pard\sa60\par
+\pard\sa40\f1\fs15 | Workstream | Snapshot classification | Evidence/next action |\par
+\pard\sa40\f1\fs15 |---|---|---|\par
+\pard\sa40\f1\fs15 | Vision, roadmap, project requirements | Documented | See living docs |\par
+\pard\sa40\f1\fs15 | 178-task, 14-phase plan | Documented | Backlog Markdown + CSV |\par
+\pard\sa40\f1\fs15 | 30-project research catalog | Documented | PUBLIC_REPOSITORIES_TO_STUDY.txt |\par
+\pard\sa40\f1\fs15 | Detailed two-main-foundation audit | Draft PR, unmerged | PR #21 / ADR-0003 |\par
+\pard\sa40\f1\fs15 | Original-code license and contributor rights | BLOCKED | Issue #1 / PR #22 |\par
+\pard\sa40\f1\fs15 | Next.js web frontend | MISSING | After gates: MM-02-01 |\par
+\pard\sa40\f1\fs15 | Auth / tenant data / secure join | MISSING | G03/G04 |\par
+\pard\sa40\f1\fs15 | Live video with 2 browsers | MISSING | MM-04-01/02 tests |\par
+\pard\sa40\f1\fs15 | CI / typecheck / test harness | MISSING | G02 |\par
+\pard\sa40\f1\fs15 | Chat/recordings/mobile/AI | PLANNED | G05/G06/G10 |\par
+\pard\sa40\f1\fs15 | Large event with 100K actual viewers | PLANNED, NOT PROVEN | G07/G08 real media testing |\par
+\pard\sa60\par
+\pard\sb200\sa110\keepn\b\fs27\f0 3. Exactly TWO primary open-source foundations (proposed, not approved)\b0\par
+\pard\sa60\par
+\pard\sb200\sa110\keepn\b\fs23\f0 Main foundation #1 \u8212? LiveKit Meet\b0\par
+\pard\ql\sa85\fs19\f0 - URL: https://github.com/livekit-examples/meet\par
+\pard\ql\sa85\fs19\f0 - Inspected commit: **c3a16bdc7be03e201615779e8f2f6ee61d41ec91**\par
+\pard\ql\sa85\fs19\f0 - Reviewed repository license signal: **Apache-2.0**; check exact notices/assets/dependencies before reuse.\par
+\pard\ql\sa85\fs19\f0 - Reviewed app technologies: Next.js 15.5.21; React 18.3.1; TypeScript; pnpm 10.18.2; livekit-client 2.24.0; livekit-server-sdk 2.19.3; LiveKit Components React 2.9.25; Vitest.\par
+\pard\ql\sa85\fs19\f0 - Useful source files/directories: app/rooms/[roomName]/PageClientImpl.tsx; app/custom/VideoConferenceClientImpl.tsx; lib/CameraSettings.tsx; lib/MicrophoneSettings.tsx; lib/SettingsMenu.tsx; app/api/connection-details/route.ts (ONLY as a security anti-pattern); app/api/record/start/route.ts and stop/route.ts (ONLY as security anti-patterns).\par
+\pard\ql\sa85\fs19\f0 - **Reuse/study:** prejoin UX, device selectors, media controls, room connection lifecycle, gallery/active-speaker layouts, error/reconnect patterns and components integrations.\par
+\pard\ql\sa85\fs19\f0 - **Build our own:** MegaMeet UI and branding, sessions, meetings, invitations, membership, host roles, audit logs, recording consent, persistence and authorized APIs.\par
+\pard\ql\sa85\fs19\f0 - **NEVER copy demo server logic unchanged:** inspected app/api/connection-details/route.ts is a GET endpoint accepting caller-provided room/name/metadata with no authenticated meeting admission and broad roomJoin/canPublish/canPublishData/canSubscribe grants. Its recording start/stop routes explicitly warn they do not authenticate users. These are not production security boundaries.\par
+\pard\ql\sa85\fs19\f0 - **Dependency warning:** upstream includes @livekit/krisp-noise-filter 0.4.6 with separate license/terms: OMIT until specifically approved. Do not copy branded images/logos/assets without rights.\par
+\pard\sa60\par
+\pard\sb200\sa110\keepn\b\fs23\f0 Main foundation #2 \u8212? LiveKit Server\b0\par
+\pard\ql\sa85\fs19\f0 - URL: https://github.com/livekit/livekit\par
+\pard\ql\sa85\fs19\f0 - Pinned reviewed tag: **v1.13.11**, commit **385aa40f9292fe1db8caad87301e4b285b7c198a**\par
+\pard\ql\sa85\fs19\f0 - Reviewed repository license signal: **Apache-2.0** with LICENSE and NOTICE.\par
+\pard\ql\sa85\fs19\f0 - Go WebRTC SFU; major inspected directories: pkg/routing, pkg/service, pkg/rtc, pkg/sfu, test.\par
+\pard\ql\sa85\fs19\f0 - **Use as an external media infrastructure service** through official SDKs/room APIs; do not fork/maintain an entire proprietary SFU.\par
+\pard\ql\sa85\fs19\f0 - WebRTC signaling and media; local single-node deployment is simpler; distributed deployment needs Redis and appropriate networking, TURN, metrics, region/capacity monitoring and upgrade plans.\par
+\pard\ql\sa85\fs19\f0 - A normal self-hosted media room should not be assumed to span every node or accept 100K publishers. Design large-event playback through a separate egress-to-origin/CDN path.\par
+\pard\ql\sa85\fs19\f0 - Upgrades: pin releases, review release notes/security/dependency BOM, smoke-test AV/reconnect/permissions, and document rollback.\par
+\pard\sa60\par
+\pard\sb200\sa110\keepn\b\fs23\f0 Why Jitsi/BigBlueButton are alternatives, not additional main foundations\b0\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 - [Jitsi Meet](https://github.com/jitsi/jitsi-meet) offers mature conferencing UX, but adopting Jitsi Videobridge/Jicofo/Prosody/Jibri beside LiveKit would duplicate media and operational stacks. Study UX and architecture.\par
+\pard\ql\sa85\fs19\f0 - [BigBlueButton](https://github.com/bigbluebutton/bigbluebutton) is rich in classroom moderation/whiteboards/recordings, but has a much larger multi-service deployment and LGPL/component-level due diligence. Study workflows, do not wholesale merge.\par
+\pard\ql\sa85\fs19\f0 - The other 26 catalog entries are supporting services, later features, tools, or comparisons, not equal primary foundations.\par
+\pard\ql\sa85\fs19\f0 - This **exactly-two** decision is a research proposal in ADR-0003; owner/engineering approval remains required.\par
+\pard\sa60\par
+\pard\sb200\sa110\keepn\b\fs27\f0 4. All THIRTY previously listed public GitHub repositories and intended roles\b0\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 These are reference-catalog entries, not 30 installed dependencies. Classification is a screening decision; packages/modules may have distinct terms. Source: [existing catalog](../PUBLIC_REPOSITORIES_TO_STUDY.txt) and [audit PR #21](https://github.com/arunabanarjee32-bit/google-meet/pull/21).\par
+\pard\sa60\par
+\pard\sa40\f1\fs15 | # | GitHub repository | Use to study / classification |\par
+\pard\sa40\f1\fs15 |---:|---|---|\par
+\pard\sa40\f1\fs15 | 01 | [livekit-examples/meet](https://github.com/livekit-examples/meet) | **MAIN #1** \u8212? web frontend patterns |\par
+\pard\sa40\f1\fs15 | 02 | [livekit-examples/livestream](https://github.com/livekit-examples/livestream) | Livestream UX reference; license check |\par
+\pard\sa40\f1\fs15 | 03 | [livekit/livekit](https://github.com/livekit/livekit) | **MAIN #2** \u8212? SFU media service |\par
+\pard\sa40\f1\fs15 | 04 | [livekit/egress](https://github.com/livekit/egress) | Future recording/export/speaker-feed egress |\par
+\pard\sa40\f1\fs15 | 05 | [livekit/ingress](https://github.com/livekit/ingress) | Optional RTMP/WHIP / encoder ingest |\par
+\pard\sa40\f1\fs15 | 06 | [livekit/components-js](https://github.com/livekit/components-js) | React media UI components/SDK |\par
+\pard\sa40\f1\fs15 | 07 | [livekit/client-sdk-react-native](https://github.com/livekit/client-sdk-react-native) | Later Android/iOS |\par
+\pard\sa40\f1\fs15 | 08 | [livekit/agents](https://github.com/livekit/agents) | Later opt-in AI agents |\par
+\pard\sa40\f1\fs15 | 09 | [jitsi/jitsi-meet](https://github.com/jitsi/jitsi-meet) | Complete meeting architecture/UX alternative |\par
+\pard\sa40\f1\fs15 | 10 | [bigbluebutton/bigbluebutton](https://github.com/bigbluebutton/bigbluebutton) | Classroom/host moderation reference |\par
+\pard\sa40\f1\fs15 | 11 | [owncast/owncast](https://github.com/owncast/owncast) | Self-hosted broadcast community reference |\par
+\pard\sa40\f1\fs15 | 12 | [OvenMediaLabs/OvenSpace](https://github.com/OvenMediaLabs/OvenSpace) | Broadcast presenter/audience reference |\par
+\pard\sa40\f1\fs15 | 13 | [OvenMediaLabs/OvenMediaEngine](https://github.com/OvenMediaLabs/OvenMediaEngine) | Alternate low-latency origin; AGPL diligence |\par
+\pard\sa40\f1\fs15 | 14 | [ossrs/srs](https://github.com/ossrs/srs) | Optional streaming origin; not a global CDN |\par
+\pard\sa40\f1\fs15 | 15 | [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw) | Whiteboard after package audit |\par
+\pard\sa40\f1\fs15 | 16 | [yjs/yjs](https://github.com/yjs/yjs) | Collaborative CRDT shared state |\par
+\pard\sa40\f1\fs15 | 17 | [keycloak/keycloak](https://github.com/keycloak/keycloak) | Optional enterprise OIDC/SSO |\par
+\pard\sa40\f1\fs15 | 18 | [centrifugal/centrifugo](https://github.com/centrifugal/centrifugo) | Chat/Q&A/poll fanout if justified |\par
+\pard\sa40\f1\fs15 | 19 | [fullcalendar/fullcalendar](https://github.com/fullcalendar/fullcalendar) | Calendar UI; premium terms separated |\par
+\pard\sa40\f1\fs15 | 20 | [valkey-io/valkey](https://github.com/valkey-io/valkey) | Ephemeral state, cache, distributed coordination |\par
+\pard\sa40\f1\fs15 | 21 | [openai/whisper](https://github.com/openai/whisper) | Future transcription, consent and compute plan |\par
+\pard\sa40\f1\fs15 | 22 | [novuhq/novu](https://github.com/novuhq/novu) | Future notification workflows; edition licenses |\par
+\pard\sa40\f1\fs15 | 23 | [umami-software/umami](https://github.com/umami-software/umami) | Later privacy-aware analytics |\par
+\pard\sa40\f1\fs15 | 24 | [killbill/killbill](https://github.com/killbill/killbill) | Future billing; likely too heavy for MVP |\par
+\pard\sa40\f1\fs15 | 25 | [locustio/locust](https://github.com/locustio/locust) | HTTP/WS load testing (not actual video proof) |\par
+\pard\sa40\f1\fs15 | 26 | [coturn/coturn](https://github.com/coturn/coturn) | TURN fallback if needed; license check |\par
+\pard\sa40\f1\fs15 | 27 | [tldraw/tldraw](https://github.com/tldraw/tldraw) | Drawing SDK reference; commercial license check |\par
+\pard\sa40\f1\fs15 | 28 | [calcom/cal.diy](https://github.com/calcom/cal.diy) | Scheduling reference (older calcom/cal.com URL moved) |\par
+\pard\sa40\f1\fs15 | 29 | [zitadel/zitadel](https://github.com/zitadel/zitadel) | Identity alternative; AGPL diligence |\par
+\pard\sa40\f1\fs15 | 30 | [grafana/k6](https://github.com/grafana/k6) | Load testing alternative; AGPL diligence |\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 **Other discussed providers, not extra source-repository entries:** [LiveKit Cloud](https://livekit.io/), [AWS IVS](https://aws.amazon.com/ivs/), [Cloudflare Stream](https://developers.cloudflare.com/stream/), and comparison with [Mux](https://www.mux.com/). Provider terms/prices/quotas must be reverified before paying or deploying.\par
+\pard\sa60\par
+\pard\sb200\sa110\keepn\b\fs27\f0 5. Architecture and charts\b0\par
+\pard\sa60\par
+\pard\sb200\sa110\keepn\b\fs23\f0 A. Production concept: control plane versus media plane\b0\par
+\pard\sa60\par
+\pard\sa40\f1\fs15 flowchart TD\par
+\pard\sa40\f1\fs15   Browser["MegaMeet web / future mobile"]\par
+\pard\sa40\f1\fs15   API["MegaMeet Next.js BFF / future control API"]\par
+\pard\sa40\f1\fs15   OIDC["Session identity / OIDC provider"]\par
+\pard\sa40\f1\fs15   Policy["Meeting authorization / roles / admission"]\par
+\pard\sa40\f1\fs15   DB[("PostgreSQL canonical product data")]\par
+\pard\sa40\f1\fs15   LK["LiveKit SFU / signaling / media"]\par
+\pard\sa40\f1\fs15   Egress["LiveKit Egress (later)"]\par
+\pard\sa40\f1\fs15   CDN["Approved streaming origin + CDN (later)"]\par
+\pard\sa40\f1\fs15   Audience["Audience playback (later)"]\par
+\pard\sa40\f1\fs15   Interaction["Chat / Q&A / polls (later)"]\par
+\pard\sa40\f1\fs15   Browser -->|"Authenticated control requests"| API\par
+\pard\sa40\f1\fs15   API --> OIDC\par
+\pard\sa40\f1\fs15   API --> Policy\par
+\pard\sa40\f1\fs15   Policy --> DB\par
+\pard\sa40\f1\fs15   Policy -->|"Server-issued scoped media JWT"| Browser\par
+\pard\sa40\f1\fs15   Browser <-->|"WebRTC tracks"| LK\par
+\pard\sa40\f1\fs15   API -->|"Room/participant management SDK"| LK\par
+\pard\sa40\f1\fs15   LK --> Egress\par
+\pard\sa40\f1\fs15   Egress --> CDN\par
+\pard\sa40\f1\fs15   CDN --> Audience\par
+\pard\sa40\f1\fs15   Browser --> Interaction\par
+\pard\sa40\f1\fs15   Audience --> Interaction\par
+\pard\sa40\f1\fs15   Interaction --> DB\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 **Security boundary:** the browser never sees provider secrets. App server checks tenant + meeting + invitation/admission + ban + lobby + capacity + server-derived role before issuing a short-lived media credential. Provider room state does not replace MegaMeet's canonical authorization model.\par
+\pard\sa60\par
+\pard\sb200\sa110\keepn\b\fs23\f0 B. Secure participant join sequence\b0\par
+\pard\sa60\par
+\pard\sa40\f1\fs15 sequenceDiagram\par
+\pard\sa40\f1\fs15   participant U as Browser\par
+\pard\sa40\f1\fs15   participant A as MegaMeet app/API\par
+\pard\sa40\f1\fs15   participant D as Product DB / policy\par
+\pard\sa40\f1\fs15   participant L as LiveKit\par
+\pard\sa40\f1\fs15   U->>A: Request join (session or guest invite)\par
+\pard\sa40\f1\fs15   A->>D: Verify session / tenant / meeting / ticket / lobby\par
+\pard\sa40\f1\fs15   alt Access denied or not admitted\par
+\pard\sa40\f1\fs15     D-->>A: Denied / pending\par
+\pard\sa40\f1\fs15     A-->>U: 401 / 403 / waiting state\par
+\pard\sa40\f1\fs15   else Authorized\par
+\pard\sa40\f1\fs15     D-->>A: Internal participant ID + server-derived role\par
+\pard\sa40\f1\fs15     A->>A: Mint short-lived room-specific grants\par
+\pard\sa40\f1\fs15     A-->>U: No-store URL + scoped JWT\par
+\pard\sa40\f1\fs15     U->>L: Connect using server-issued token\par
+\pard\sa40\f1\fs15     L-->>U: Media and participant tracks\par
+\pard\sa40\f1\fs15   end\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 **Do not accept browser-provided host roles, raw room identities, arbitrary privileges or recording starts.** Do not put tokens in query strings or logs. Build rejoin/revocation semantics and audit events.\par
+\pard\sa60\par
+\pard\sb200\sa110\keepn\b\fs23\f0 C. Milestone dependencies\b0\par
+\pard\sa60\par
+\pard\sa40\f1\fs15 flowchart LR\par
+\pard\sa40\f1\fs15  G00["G00: Owner/license"] --> G01["G01: Approved architecture"]\par
+\pard\sa40\f1\fs15  G01 --> G02["G02: App + checks"]\par
+\pard\sa40\f1\fs15  G02 --> G03["G03: Auth + meeting APIs"]\par
+\pard\sa40\f1\fs15  G03 --> G04["G04: Real WebRTC meetings"]\par
+\pard\sa40\f1\fs15  G04 --> G05["G05: Collaboration"]\par
+\pard\sa40\f1\fs15  G04 --> G06["G06: Recordings / captions"]\par
+\pard\sa40\f1\fs15  G04 --> G07["G07: Event MVP"]\par
+\pard\sa40\f1\fs15  G07 --> G08["G08: Validated audience scale"]\par
+\pard\sa40\f1\fs15  G04 --> G12["G12: Operational readiness"]\par
+\pard\sa40\f1\fs15  G05 --> G13["G13: Staged release"]\par
+\pard\sa40\f1\fs15  G12 --> G13\par
+\pard\sa60\par
+\pard\sb200\sa110\keepn\b\fs23\f0 D. Near-term repository structure \u8212? PROPOSED, not implemented\b0\par
+\pard\sa60\par
+\pard\sa40\f1\fs15 google-meet/\par
+\pard\sa40\f1\fs15   apps/\par
+\pard\sa40\f1\fs15     web/\par
+\pard\sa40\f1\fs15       app/                       Next.js screens and trusted server routes\par
+\pard\sa40\f1\fs15       components/meeting/        Real LiveKit-powered components\par
+\pard\sa40\f1\fs15       lib/                       Session, policy and provider adapters\par
+\pard\sa40\f1\fs15       tests/                     Real assertions and browser tests\par
+\pard\sa40\f1\fs15       package.json\par
+\pard\sa40\f1\fs15   packages/\par
+\pard\sa40\f1\fs15     contracts/                   Only after a real API contract exists\par
+\pard\sa40\f1\fs15     config/                      Only when genuinely shared\par
+\pard\sa40\f1\fs15   docs/                          This research, backlog and ADRs\par
+\pard\sa40\f1\fs15   .github/workflows/             Minimal CI when implemented\par
+\pard\sa40\f1\fs15   package.json\par
+\pard\sa40\f1\fs15   pnpm-workspace.yaml\par
+\pard\sa40\f1\fs15   pnpm-lock.yaml\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 Do not create dozens of empty service directories or a competing media engine merely to match a large-system diagram.\par
+\pard\sa60\par
+\pard\sb200\sa110\keepn\b\fs27\f0 6. Domain and API boundaries to implement after approval\b0\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 **Canonical entities:** User, Organization, Membership, Meeting, MeetingPolicy, Invitation/GuestTicket, AdmissionRequest, ParticipantSession, RoleAssignment, Recording, AuditEvent. Add LargeEvent, StageRequest and BroadcastSession only when building G07.\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 **Roles:** host, moderator, speaker, attendee, viewer. These are **server-derived capabilities**, not input fields accepted as authority.\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 **Candidate versioned endpoints (design proposal, not implemented):**\par
+\pard\ql\sa85\fs19\f0 - POST /api/meetings \u8212? create meeting under identity/tenant policy.\par
+\pard\ql\sa85\fs19\f0 - GET /api/meetings/\{meetingId\} \u8212? authorized meeting details.\par
+\pard\ql\sa85\fs19\f0 - POST /api/meetings/\{meetingId\}/join-requests \u8212? initiate admission.\par
+\pard\ql\sa85\fs19\f0 - POST /api/meetings/\{meetingId\}/admissions/\{requestId\} \u8212? host/moderator approval.\par
+\pard\ql\sa85\fs19\f0 - POST /api/meetings/\{meetingId\}/media-grants \u8212? short-lived least-privilege LiveKit grant.\par
+\pard\ql\sa85\fs19\f0 - POST /api/meetings/\{meetingId\}/role-assignments \u8212? audited server-validated role change.\par
+\pard\ql\sa85\fs19\f0 - POST /api/meetings/\{meetingId\}/remove-participant \u8212? revoke/expel.\par
+\pard\ql\sa85\fs19\f0 - POST /api/meetings/\{meetingId\}/recordings \u8212? role+consent-gated start.\par
+\pard\ql\sa85\fs19\f0 - DELETE /api/meetings/\{meetingId\}/recordings/\{recordingId\} \u8212? role+policy-gated stop/deletion.\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 **Security tests:** expired/revoked invite; wrong tenant; wrong meeting; guessed meeting ID; caller-supplied host role; unauthenticated recording start/stop; banned user; closed/locked room; forged participant identity; CSRF on session mutations; recording without consent; abuse-rate limits; token caching and logging; webhook signature failure.\par
+\pard\sa60\par
+\pard\sb200\sa110\keepn\b\fs27\f0 7. 100K audience ambition \u8212? separate broadcast path\b0\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 **Target:** eventually 100,000+ **viewers** in one logical event with a deliberately bounded group of WebRTC presenters. Do NOT model 100,000 interactive publishers, a 100K-member LiveKit SFU room or a proven 100K capacity today.\par
+\pard\sa60\par
+\pard\sa40\f1\fs15 flowchart LR\par
+\pard\sa40\f1\fs15   Stage["Approved LiveKit speakers"] --> Export["LiveKit Egress"]\par
+\pard\sa40\f1\fs15   Export --> Origin["Broadcast provider / origin"]\par
+\pard\sa40\f1\fs15   Origin --> CDN["CDN / distributed edge"]\par
+\pard\sa40\f1\fs15   CDN --> Viewers["Signed audience playback"]\par
+\pard\sa40\f1\fs15   Viewers --> Realtime["Moderated interaction service"]\par
+\pard\sa40\f1\fs15   Realtime --> Mods["Host Q&A / polls / stage promotion"]\par
+\pard\sa40\f1\fs15   Mods --> Stage\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 **Bandwidth illustration:** 100K viewers at 1 Mbps average = 100 Gbps aggregate delivery; a 60-minute event is ~45 TB decimal payload before overhead. At 2 Mbps, ~200 Gbps and ~90 TB/h. These are rough capacity **planning arithmetic**, NOT proof, vendor quotas or cost quotes. See [SCALABILITY_100K.md](SCALABILITY_100K.md).\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 **Dated provider price examples from the Nov 15 draft audit, not current quotes:** Cloudflare Stream list-price example 6 million delivered minutes at $1/1000 minutes \u8776? $6,000; Mux and AWS IVS estimates in the audit differ by tier, region and free allowances. Recheck official [Cloudflare pricing](https://developers.cloudflare.com/stream/pricing/), [Mux pricing](https://www.mux.com/pricing), [AWS IVS pricing](https://aws.amazon.com/ivs/pricing/) before budgets. Availability/100K quotas are not established.\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 **Verification ladder:** 2\u8211?25 real interactive participants; 100\u8211?1K, then 10K, 50K and 100K real **audience playback** clients, with browser/network/region, provider quota, buffering, latency, QoS and invoice evidence. Synthetic HTTP/WS load cannot prove video playback capacity.\par
+\pard\sa60\par
+\pard\sb200\sa110\keepn\b\fs27\f0 8. Authoritative development backlog \u8212? 178 tasks / 14 gated phases\b0\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 [Complete backlog](TASK_BACKLOG.md) and [CSV](TASK_BACKLOG.csv) are the **source of truth** for every specific task ID and acceptance condition. Never quietly replace or renumber them. The archived full text is in [snapshot part 3](CONTEXT_ARCHIVE/GITHUB_SOURCE_SNAPSHOT_PART_03.md); CSV is in [part 5](CONTEXT_ARCHIVE/GITHUB_SOURCE_SNAPSHOT_PART_05.md).\par
+\pard\sa60\par
+\pard\sa40\f1\fs15 | Gate | Focus | Count |\par
+\pard\sa40\f1\fs15 |---|---|---:|\par
+\pard\sa40\f1\fs15 | G00 | Product, ownership, governance | 10 |\par
+\pard\sa40\f1\fs15 | G01 | Architecture, reuse and contracts | 12 |\par
+\pard\sa40\f1\fs15 | G02 | Monorepo, CI and developer experience | 12 |\par
+\pard\sa40\f1\fs15 | G03 | Accounts, organizations, scheduling, core APIs | 12 |\par
+\pard\sa40\f1\fs15 | G04 | Reliable real-time video | 16 |\par
+\pard\sa40\f1\fs15 | G05 | Collaboration, moderation, accessibility | 13 |\par
+\pard\sa40\f1\fs15 | G06 | Recording, playback, captions and optional AI | 12 |\par
+\pard\sa40\f1\fs15 | G07 | Webinars / 100K-event product architecture | 16 |\par
+\pard\sa40\f1\fs15 | G08 | 100K testing/security/resilience | 12 |\par
+\pard\sa40\f1\fs15 | G09 | Enterprise security/SSO/integrations | 12 |\par
+\pard\sa40\f1\fs15 | G10 | Mobile and desktop strategy | 10 |\par
+\pard\sa40\f1\fs15 | G11 | Monetization, analytics and integrations | 13 |\par
+\pard\sa40\f1\fs15 | G12 | Production security, quality and SRE | 18 |\par
+\pard\sa40\f1\fs15 | G13 | Beta, commercial launch and improvements | 10 |\par
+\pard\sa40\f1\fs15 | **TOTAL** | **46 Chat + 115 Sol + 17 Astra work orders** | **178** |\par
+\pard\sa60\par
+\pard\sb200\sa110\keepn\b\fs23\f0 Credit-conscious agent responsibilities (already established in the repository)\b0\par
+\pard\ql\sa85\fs19\f0 - **Chat GPT-6:** specs, research tables, documentation, test cases and small isolated code drafts.\par
+\pard\ql\sa85\fs19\f0 - **Codex GPT-6.1 Sol:** default for narrow implementation, dependency integration, tests/CI and reproducible verification; one task/PR at a time.\par
+\pard\ql\sa85\fs19\f0 - **Astra in Codex/Work:** targeted review of hard security, role escalation, distributed media/CDN, races, failure/incident cases, not a blanket rewrite.\par
+\pard\ql\sa85\fs19\f0 - **Owner/human:** license, contributors, paid vendor budgets, privacy/retention policy, architecture/security release gates and launch claims.\par
+\pard\ql\sa85\fs19\f0 - No invented credit totals or unsupported results. Follow [CODEX_CREDIT_POLICY.md](CODEX_CREDIT_POLICY.md).\par
+\pard\sa60\par
+\pard\sb200\sa110\keepn\b\fs23\f0 Specific dependency-ordered tasks\b0\par
+\pard\sa60\par
+\pard\sa40\f1\fs15 | Order | Task ID | Prerequisite / work / acceptance |\par
+\pard\sa40\f1\fs15 |---:|---|---|\par
+\pard\sa40\f1\fs15 | 1 | MM-00-07 | Written owner decision on original-code license and contribution policy; [issue #1](https://github.com/arunabanarjee32-bit/google-meet/issues/1) |\par
+\pard\sa40\f1\fs15 | 2 | MM-00-08 | Legal/commercial review of license and upstream reuse |\par
+\pard\sa40\f1\fs15 | 3 | MM-01-01/02/03 | Review repository inventory, exact version/license BOM and reuse/build/defer; evidence pack in draft PR #21 |\par
+\pard\sa40\f1\fs15 | 4 | MM-01-04/05/08/12 | Approve media vs broadcast boundaries, threat model, and implementation architecture |\par
+\pard\sa40\f1\fs15 | 5 | MM-02-01 | First real Next.js/TypeScript web app, working local run and lockfile |\par
+\pard\sa40\f1\fs15 | 6 | MM-02-02 to 06 | pnpm pinning, environment schema, lint/typecheck/unit tests and least-privilege GitHub Actions |\par
+\pard\sa40\f1\fs15 | 7 | MM-03-01 / MM-03-06 / MM-03-07 | Identity, meeting CRUD, secure invitation/admission tickets |\par
+\pard\sa40\f1\fs15 | 8 | MM-04-01 / MM-04-02 | Actual LiveKit SDK and server-authorized short-lived grants; two browsers see/speak |\par
+\pard\sa40\f1\fs15 | 9 | MM-04-03 through MM-04-16 | Device selection, screen sharing, moderation, network recovery, browser compatibility, negative permission tests |\par
+\pard\sa40\f1\fs15 | 10 | G05 / G06 | Chat, Q&A, whiteboard, recording, consent and captions after secure meeting flow |\par
+\pard\sa40\f1\fs15 | 11 | G07 then G08 | Dedicated broadcast MVP, progressive **real playback** tests, approved quotas/budget |\par
+\pard\sa40\f1\fs15 | 12 | G09\u8211?G13 as gated | Enterprise/mobile/billing, SRE/production, pilots, launch |\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 **Roadmap improvement proposal:** enable the smallest identity/meeting authorization necessary for a secure two-browser MVP rather than completing every enterprise/scheduling feature first. Review MM-04-01/02 together to avoid exposing an unauthenticated token endpoint; keep their official backlog IDs.\par
+\pard\sa60\par
+\pard\sb200\sa110\keepn\b\fs27\f0 9. First real coding task (blocked today)\b0\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 **Task:** MM-02-01 \u8212? Initialize the minimal Next.js/TypeScript monorepo. **Do not mark complete because files were described in a plan.**\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 **Prerequisites:** owner chooses original-code/contribution license (MM-00-07/issue #1); G00/G01 gate approvals; approved dependency versions and owner-approved architecture. There is **no approval in these docs**.\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 **Intended initial files:** apps/web/app/page.tsx; apps/web/app/layout.tsx; apps/web/package.json; apps/web/tsconfig.json; root package.json; pnpm-workspace.yaml; pnpm-lock.yaml; minimal setup changes in README. Follow-on tasks add .env.example/environment schema, tests and CI. Do not import LiveKit Meet wholesale or include Krisp without approval.\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 **Acceptance:** fresh clone can install pinned dependencies, start the web app, render an original MegaMeet-branded page, and pass intended checks after the scripts exist:\par
+\pard\sa60\par
+\pard\sa40\f1\fs15 pnpm install --frozen-lockfile\par
+\pard\sa40\f1\fs15 pnpm lint\par
+\pard\sa40\f1\fs15 pnpm typecheck\par
+\pard\sa40\f1\fs15 pnpm test\par
+\pard\sa40\f1\fs15 pnpm build\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 **Verification status as of snapshot:** NOT EXECUTED; there is no main-branch app/package/test harness. For later MM-04 tasks require true two-browser WebRTC audio/video plus authorization rejection tests; UI-only participant cards are not sufficient.\par
+\pard\sa60\par
+\pard\sb200\sa110\keepn\b\fs27\f0 10. Licensing, safety and operations approval gates\b0\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 - **Issue #1 remains unresolved** at archive time: choose proprietary/open-source/source-available/dual terms for original code, external contributor rights (no outside contributions/DCO/CLA), ownership, trademark and review.\par
+\pard\ql\sa85\fs19\f0 - [PR #22 worksheet](https://github.com/arunabanarjee32-bit/google-meet/pull/22) compares choices, but neither it nor this document selects one.\par
+\pard\ql\sa85\fs19\f0 - Apache-2.0 source reuse still requires exact notice/license/dependency audit; public GitHub is not blanket permission. No exclusive upstream ownership.\par
+\pard\ql\sa85\fs19\f0 - Never commit secrets, recording artifacts, personal data, credentials, sensitive meeting URLs or vendor tokens to this public repo.\par
+\pard\ql\sa85\fs19\f0 - No paid LiveKit/IVS/Stream deployments, AI inference runs or high-concurrency load tests without provider, region, budget, shutdown and owner authorization.\par
+\pard\ql\sa85\fs19\f0 - Sensitive actions: server-enforced RBAC/tenant checks, tokens short-lived, no role strings trusted from clients, signed webhook verification, rate limiting, consent visible for recording/AI, deletion/retention, audit logging.\par
+\pard\ql\sa85\fs19\f0 - Accessibility and stable release verification are requirements, not postlaunch polish.\par
+\pard\ql\sa85\fs19\f0 - Maintainer review remains required before merging draft PRs or moving stage gates.\par
+\pard\sa60\par
+\pard\sb200\sa110\keepn\b\fs27\f0 11. Main living documents and direct links\b0\par
+\pard\sa60\par
+\pard\sa40\f1\fs15 | Area | Canonical reference |\par
+\pard\sa40\f1\fs15 |---|---|\par
+\pard\sa40\f1\fs15 | Overview and live status | [README.md](../README.md) |\par
+\pard\sa40\f1\fs15 | AI/coding rules | [AGENTS.md](../AGENTS.md) |\par
+\pard\sa40\f1\fs15 | Contributor process | [CONTRIBUTING.md](../CONTRIBUTING.md) |\par
+\pard\sa40\f1\fs15 | Project vision | [PROJECT_VISION.md](PROJECT_VISION.md) |\par
+\pard\sa40\f1\fs15 | Product requirements | [PRODUCT_REQUIREMENTS.md](PRODUCT_REQUIREMENTS.md) |\par
+\pard\sa40\f1\fs15 | Architecture | [ARCHITECTURE.md](ARCHITECTURE.md) |\par
+\pard\sa40\f1\fs15 | Technical reuse/stack | [TECH_STACK.md](TECH_STACK.md) |\par
+\pard\sa40\f1\fs15 | Roadmap | [ROADMAP.md](ROADMAP.md) |\par
+\pard\sa40\f1\fs15 | Master delivery gates | [DELIVERY_MASTER_PLAN.md](DELIVERY_MASTER_PLAN.md) |\par
+\pard\sa40\f1\fs15 | Complete 178-task backlog | [TASK_BACKLOG.md](TASK_BACKLOG.md) and [TASK_BACKLOG.csv](TASK_BACKLOG.csv) |\par
+\pard\sa40\f1\fs15 | Codex credit model | [CODEX_CREDIT_POLICY.md](CODEX_CREDIT_POLICY.md) |\par
+\pard\sa40\f1\fs15 | Scoped Codex work orders | [CODEX_TASKS.md](CODEX_TASKS.md) |\par
+\pard\sa40\f1\fs15 | First sprint | [FIRST_SPRINT.md](FIRST_SPRINT.md) |\par
+\pard\sa40\f1\fs15 | Licensing/legal strategy | [LICENSING.md](LICENSING.md) |\par
+\pard\sa40\f1\fs15 | Security/privacy | [SECURITY_PRIVACY.md](SECURITY_PRIVACY.md), [SECURITY.md](../SECURITY.md) |\par
+\pard\sa40\f1\fs15 | 100K streaming scale | [SCALABILITY_100K.md](SCALABILITY_100K.md) |\par
+\pard\sa40\f1\fs15 | Cost assumptions | [COST_MODEL.md](COST_MODEL.md) |\par
+\pard\sa40\f1\fs15 | Developer guidelines | [DEVELOPMENT.md](DEVELOPMENT.md) |\par
+\pard\sa40\f1\fs15 | Definition of done | [DEFINITION_OF_DONE.md](DEFINITION_OF_DONE.md) |\par
+\pard\sa40\f1\fs15 | Github issue index | [ISSUE_INDEX.md](ISSUE_INDEX.md) |\par
+\pard\sa40\f1\fs15 | Baseline ADRs | [DECISIONS/0001-modular-monorepo.md](DECISIONS/0001-modular-monorepo.md), [DECISIONS/0002-interactive-and-broadcast.md](DECISIONS/0002-interactive-and-broadcast.md) |\par
+\pard\sa40\f1\fs15 | 30 reference GitHub repositories | [PUBLIC_REPOSITORIES_TO_STUDY.txt](../PUBLIC_REPOSITORIES_TO_STUDY.txt) |\par
+\pard\sa40\f1\fs15 | Draft audited architecture and 30-repo screening | [PR #21](https://github.com/arunabanarjee32-bit/google-meet/pull/21), [FOUNDATION_AUDIT](https://github.com/arunabanarjee32-bit/google-meet/blob/audit/livekit-foundations-2026-11-15/docs/FOUNDATION_AUDIT_2026-11-15.md), [ADR-0003 proposed](https://github.com/arunabanarjee32-bit/google-meet/blob/audit/livekit-foundations-2026-11-15/docs/DECISIONS/0003-livekit-foundations.md) |\par
+\pard\sa40\f1\fs15 | Draft licensing decision | [PR #22](https://github.com/arunabanarjee32-bit/google-meet/pull/22), [worksheet](https://github.com/arunabanarjee32-bit/google-meet/blob/docs/mm-00-07-license-decision-worksheet-2026-11-16/docs/LICENSING_DECISION_WORKSHEET.md) |\par
+\pard\sa40\f1\fs15 | Complete versioned text snapshot | [Archive parts 1\u8211?5](CONTEXT_ARCHIVE/README.md) |\par
+\pard\sa40\f1\fs15 | Accessible prior user-chat excerpts | [KNOWN_CHAT_HISTORY_EXCERPTS_2026-11-16.md](CONTEXT_ARCHIVE/KNOWN_CHAT_HISTORY_EXCERPTS_2026-11-16.md) |\par
+\pard\sa40\f1\fs15 | Exact uploaded instruction source | [ORIGINAL_MASTER_ENGINEERING_PROMPT_2026-11-16.txt](CONTEXT_ARCHIVE/ORIGINAL_MASTER_ENGINEERING_PROMPT_2026-11-16.txt) |\par
+\pard\sa60\par
+\pard\sb200\sa110\keepn\b\fs27\f0 12. Evidence and verification ledger (do not overclaim)\b0\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 **Verified in GitHub for this archive:** root/docs/.github tree and main-branch documentation-only inventory; license issue #1; open PRs #21/#22; 30 catalog entries; 178-work-order backlog; direct LiveKit Meet source files and dependency manifest; LiveKit Server tagged source layout; license-risk observations; source files copied into archive and read back. The original uploaded prompt was read and archived without text edits.\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 **Research conclusions, not approved choices:** exactly two main foundations; use Next.js/TypeScript + LiveKit; minimal BFF and future database; large-event egress/CDN mode; optional supporting libraries and vendor choices.\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 **Not executed / not present:** npm/pnpm installs, local app build/lint/types/tests, browser WebRTC verification, app deployment, 100K playback measurements, vendor quota approvals, security certification, cost invoices, merged PR approval.\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 **Further study needed before dependency adoption:** current package versions, complete transitive licenses, SECURITY advisories, API compatibility, exact media grants, TURN/network limitations, host/guest threat model, and production cost.\par
+\pard\sa60\par
+\pard\sb200\sa110\keepn\b\fs27\f0 13. Copyable continuation prompt for a fresh AI / Codex session\b0\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 > You are continuing the MegaMeet project. Repository: https://github.com/arunabanarjee32-bit/google-meet. **First inspect the current branch and open PRs/issues**, then read AGENTS.md and docs/MEGAMEET_COMPLETE_PROJECT_CONTEXT.md plus docs/TASK_BACKLOG.md. For missing older ChatGPT context, consult docs/CONTEXT_ARCHIVE/README.md, the 965-line uploaded master prompt archive and full source snapshots. Do not invent unavailable chat history. Keep the 178 task IDs, 14 approval gates and exactly two proposed main foundations (LiveKit Meet frontend reference, LiveKit Server SFU) unless evidence and owner approval justify a change. As of the 2026-11-16 archive, main is docs-only, PR #21 audit and PR #22 licensing worksheet are open drafts, and issue #1 license authorization is unresolved. Do not start substantive product source or merge high-risk changes before required gate approval. Choose one smallest nonblocked backlog task; report exact files, dependencies, expected tests, verification actually run and the next action. Avoid unnecessary Astra/paid infrastructure credits.\par
+\pard\sa60\par
+\pard\sb200\sa110\keepn\b\fs27\f0 14. Maintenance protocol for future sessions\b0\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 At the end of every meaningful session:\par
+\pard\ql\sa85\fs19\f0 1. Update this master document's date and the **verified** implementation status, without overwriting historical facts.\par
+\pard\ql\sa85\fs19\f0 2. Add a short dated entry to the [archive index](CONTEXT_ARCHIVE/README.md) linking PRs/commits, tests, decisions, open blockers and the next backlog task.\par
+\pard\ql\sa85\fs19\f0 3. Preserve any new user-uploaded master prompts or exported chat files under CONTEXT_ARCHIVE with source provenance and without secrets. **Do not claim unavailable conversations were recovered.**\par
+\pard\ql\sa85\fs19\f0 4. Keep the 178-task backlog and canonical docs authoritative; do not make unreviewed architecture changes or create duplicate task lists.\par
+\pard\ql\sa85\fs19\f0 5. Use branches and PR review for proposed document/code changes; do not silently bypass required owner approval.\par
+\pard\sa60\par
+\pard\sa120\brdrb\brdrs\brdrw5\brsp15\par
+\pard\sa60\par
+\pard\ql\sa85\fs19\f0 **Single highest-priority current action:** MM-00-07 \u8212? owner records and reviews original-code licensing and contributor-policy decision at [issue #1](https://github.com/arunabanarjee32-bit/google-meet/issues/1). **After G00/G01 acceptance:** MM-02-01 minimal runnable Next.js/TypeScript app and real test harness.\par
+}

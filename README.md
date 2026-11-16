@@ -4,6 +4,12 @@
 >
 > **MegaMeet** is the provisional product name for an independent video-meeting and collaboration platform aiming to compete on experience and capability with Zoom, Google Meet, and Microsoft Teams. This repository's historical name (`google-meet`) does **not** imply any affiliation with Google.
 
+## Lost your ChatGPT project conversation? Start here
+
+**Persistent project memory lives in this repository, not in a single chat.** Read the [MegaMeet complete project context](docs/MEGAMEET_COMPLETE_PROJECT_CONTEXT.md) for the project objectives, 30 reference GitHub links, the two proposed core technologies, architecture diagrams, the 178-task delivery approach, current blockers and the next engineering task. A [Word-compatible RTF copy](docs/MEGAMEET_COMPLETE_PROJECT_CONTEXT_WORD.rtf) of the handoff is also provided. The [context archive](docs/CONTEXT_ARCHIVE/README.md) contains the exact uploaded engineering prompt, all visible prior chat excerpts (not a complete private-chat export), and five dated full-text copies of the repo documentation and unmerged audit PRs.
+
+New AI agents should read [AGENTS.md](AGENTS.md) first and re-check the **current** repo/PRs before relying on a snapshot. A dated document never proves that a feature was implemented or a license decision approved.
+
 ## What we're building
 
 A browser-first, mobile-ready, commercially viable meeting platform that combines:
